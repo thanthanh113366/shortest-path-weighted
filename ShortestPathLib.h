@@ -25,6 +25,17 @@ struct Vector3D {
 };
 
 /**
+ * @struct VertexGeometricParams
+ * @brief Geometric parameters for each vertex as defined in the paper (Task 2.1)
+ */
+struct VertexGeometricParams {
+    double h_v = 0.0;     // Minimum distance from vertex to boundary of union of incident faces
+    double theta_v = 0.0; // Minimum angle between any two adjacent edges at this vertex  
+    double r_v = 0.0;     // Sphere radius = epsilon * h_v (computed when epsilon is known)
+    double delta = 0.0;   // Geometric progression parameter = 1 + epsilon * sin(theta_v)
+};
+
+/**
  * @struct ShortestPathResult
  * @brief Contains the result of the shortest path finding algorithm.
  */
@@ -90,6 +101,20 @@ public:
     const std::vector<std::unique_ptr<HE_HalfEdge>>& getHalfEdges() const { return halfEdges_; }
 
     /**
+     * @brief Computes geometric parameters for all vertices (Task 2.1 from paper)
+     * @param epsilon Approximation factor used to compute r_v and delta parameters
+     * @return true if all parameters computed successfully
+     */
+    bool computeGeometricParameters(double epsilon);
+    
+    /**
+     * @brief Get geometric parameters for a specific vertex
+     * @param vertexID ID of the vertex
+     * @return const reference to geometric parameters
+     */
+    const VertexGeometricParams& getVertexGeometricParams(int vertexID) const;
+    
+    /**
      * @brief Computes the epsilon-approximate shortest path on the surface of a polyhedron.
      * @param startVertexID ID of the start vertex.
      * @param endVertexID ID of the end vertex.
@@ -106,6 +131,18 @@ private:
     std::vector<std::unique_ptr<HE_Vertex>> vertices_;
     std::vector<std::unique_ptr<HE_Face>> faces_;
     std::vector<std::unique_ptr<HE_HalfEdge>> halfEdges_;
+    std::vector<VertexGeometricParams> vertex_params_;  // Task 2.1: Geometric parameters per vertex
+    
+    // Helper functions for paper-compliant validation
+    bool validatePolyhedronRequirements();
+    bool isTriangularFace(const HE_Face* face);
+    double computeMinimumAngle(const HE_Face* face);
+    double computeVertexHeight(const HE_Vertex* vertex);
+    
+    // Task 2.1: Geometric parameter computation functions
+    double computeVertexHeight_v2(const HE_Vertex* vertex);      // Improved h_v computation
+    double computeVertexMinAngle(const HE_Vertex* vertex);       // θ_v computation
+    void displayGeometricParameters() const;
 };
 
 #endif // SHORTEST_PATH_LIB_H

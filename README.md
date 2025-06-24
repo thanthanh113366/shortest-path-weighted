@@ -14,9 +14,10 @@ This project implements a computational geometry library focused on finding appr
 - **HE_HalfEdge**: Directed edges forming the mesh topology
 
 ### Key Features
-- ✅ OFF file format loader
+- ✅ OFF file format loader with face weights
 - ✅ Half-Edge data structure implementation
-- ✅ Mesh topology verification
+- ✅ Paper-compliant polyhedron validation
+- ✅ Support for both closed and open meshes
 - ⚠️ Shortest path algorithm (in development)
 
 ## 🚀 Getting Started
@@ -35,7 +36,15 @@ g++ -o test_app test.cpp ShortestPathLib.cpp -std=c++14
 ```
 
 ### Input Format
-The library accepts 3D models in **Extended OFF format** with face weights:
+
+**Paper Requirements (Aleksandrov et al.):**
+- Simple polyhedron (no self-intersections)
+- Triangular faces only
+- Positive face weights w_i > 0
+- Non-degenerate geometry
+- **Both closed and open meshes supported**
+
+**Extended OFF Format:**
 ```
 OFF
 <num_vertices> <num_faces> <num_edges>
@@ -43,7 +52,7 @@ OFF
 <face_definitions_with_weights>
 ```
 
-**Extended Face Definition Format:**
+**Face Definition:**
 ```
 3 v1 v2 v3 weight
 ```
@@ -59,6 +68,13 @@ OFF
 3 0 2 3 1.2    # Triangle with vertices 0,2,3 and weight 1.2
 ...
 ```
+
+**Validation:**
+- ✅ Triangular faces verification
+- ✅ Positive weights checking  
+- ✅ Geometric degeneracy detection
+- ✅ Minimum angle computation
+- ✅ Vertex height calculation (h_v)
 
 ## 📊 Example Output
 ```

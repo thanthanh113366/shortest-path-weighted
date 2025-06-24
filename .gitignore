@@ -39,3 +39,7 @@ Makefile
 # System files
 .DS_Store
 Thumbs.db 
+
+# Local files
+./report.txt
+./code.txt

@@ -1,0 +1,102 @@
+An - Approximation Algorithm for
+Weighted Shortest Path on Polyhedral Surfaces
+
+Task 1: Thiết lập Cấu trúc Dữ liệu và Xử lý
+Đầu vào
+
+1.1: Định nghĩa Cấu trúc Dữ liệu cho Đa diện (P)
+
+Tạo các lớp (class) hoặc cấu trúc (struct) để biểu diễn các thành phần hình học:
+
+Vertex: Lưu trữ tọa độ 3D $(x,y,z).$
+
+Face: Lưu trữ ba con trỏ đến các đỉnh của nó, và quan trọng nhất
+là trọng số (wi) của mặt đó.
+Edge: Lưu trữ hai con trỏ đến các đỉnh đầu cuối của nó.
+Các cấu trúc này cần liên kết với nhau. Ví dụ, một đỉnh nên biết các cạnh
+và mặt kề với nó.
+1.2: Xử lý Tệp Đầu vào
+
+• Viết một trình phân tích (parser) để đọc các mô hình đa diện từ các định
+dạng tệp phổ biến (ví dụ: OFF, OBJ).
+• Trình phân tích này phải điền vào các cấu trúc dữ liệu đã tạo ở 1.1.
+•
+
+Task 2: Rời rạc hóa Bề mặt - Đặt các Điểm
+Steiner
+
+2.1: Tính toán các Tham số Hình học Phụ trợ
+
+Đối với mỗi đỉnh v của đa diện, cần tính toán trước:
+
+Chiều cao (hv): Khoảng cách tối thiểu từ v đến biên của hợp các
+mặt kề với nó.
+Góc tối thiểu (0v): Góc nhỏ nhất giữa hai cạnh bất kỳ kề với v.
+
+Bán kính khối cầu (rv): Tính $\Gamma v=\epsilon$ hv. Đây là bán kính của "khối
+cầu" (sphere) ảo xung quanh mỗi đỉnh, nơi không có điểm Steiner
+nào được đặt.
+2.2: Đặt các Điểm Steiner theo Cấp số nhân
+
+• Đối với mỗi cạnh của đa diện, bắt đầu từ mỗi đỉnh cuối của nó, hãy đặt
+các điểm Steiner.
+• Từ một đỉnh v dọc theo một cạnh e, điểm Steiner đầu tiên được đặt ở
+khoảng cách rv.
+• Tính toán tham số $\delta=(1+\epsilon\cdot sin~\theta v)$ (hoặc 1+€ tùy thuộc vào θv).
+• Các điểm Steiner tiếp theo được đặt ở các khoảng cách
+
+$rv\cdot\delta,rv\cdot\delta2,rv\cdot\delta3,...$ cho đến khi đi hết chiều dài của cạnh.
+2.3: Hợp nhất các Điểm Steiner trên mỗi Cạnh
+
+• Sau Nhiệm vụ 2.2, mỗi cạnh sẽ có hai bộ điểm Steiner (một bộ từ mỗi
+đỉnh cuối).
+• Cần hợp nhất hai bộ này. Thuật toán đề xuất loại bỏ các điểm có khoảng
+cách lớn hơn tại điểm mà kích thước khoảng của hai bộ trở nên bằng
+nhau.
+Task 3: Xây dựng Đồ thị Xấp xỉ (G)
+
+3.1: Xác định các Đỉnh của Đồ thị
+
+• Tập hợp các đỉnh của đồ thị G bao gồm:
+
+1. Tất cả các đỉnh ban đầu của đa diện P.
+
+2. Tất cả các điểm Steiner đã được tạo và hợp nhất từ Task 2.
+
+3.2: Tạo các Cạnh của Đồ thị
+
+• Đối với mỗi mặt tam giác của đa diện:
+
+• Tạo một đồ thị con đầy đủ.
+Điều này có nghĩa là tạo một cạnh đồ
+thị giữa mọi cặp đỉnh (cả đỉnh gốc và điểm Steiner) nằm trên biên
+của mặt đó.
+Trọng số của mỗi cạnh đồ thị này được tính bằng: (Độ dài Euclid
+của đoạn thẳng) × (trọng số của mặt chứa nó).
+
+Task 4: Tính toán Đường đi Ngắn nhất
+
+4.1: Triển khai Thuật toán Dijkstra
+
+• Sử dụng thuật toán Dijkstra để tìm đường đi có chi phí thấp nhất từ đỉnh
+nguồn s đến tất cả các đỉnh khác trong đồ thị G.
+
+• Để đạt được hiệu năng như trong bài báo, nên sử dụng một hàng đợi ưu
+tiên dựa trên cấu trúc đống Fibonacci (Fibonacci heap).
+Task 5: Tối ưu hóa (Tùy chọn) - Xây dựng Đồ
+thị Rút gọn $(G^{*})$
+
+5.1: Triển khai Thuật toán Tỉa cạnh (Graph Pruning)
+Thay vì tạo đồ thị đầy đủ trong Nhiệm vụ 3.2, hãy tạo một đồ thị thưa
+hơn.
+Đối với một điểm Steiner p trên một cạnh, thay vì nối nó với tất cả
+các điểm trên cạnh kề, chỉ cần:
+
+1. Nối p với hai điểm cuối của dãy điểm Steiner trên cạnh kề.
+2. Nối p với một tập hợp con các điểm Steiner được chọn lọc theo
+một quy tắc logarit, như được mô tả trong Mục 4 của bài báo.
+5.2: Chạy Dijkstra trên Đồ thị $G^{*}$
+
+Chạy cùng thuật toán Dijkstra từ Task 4 trên đồ thị G* thưa hơn này.
+Thời
+gian chạy sẽ nhanh hơn đáng kể do số lượng cạnh ít hơn nhiều.
