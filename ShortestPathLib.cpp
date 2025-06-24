@@ -42,6 +42,7 @@ bool Polyhedron::loadFromOFF(const std::string& filename) {
     }
 
     std::vector<std::vector<int>> temp_faces_from_file;
+    std::vector<double> temp_face_weights;
     for (int i = 0; i < numFaces; ++i) {
         int n_verts_in_face;
         file >> n_verts_in_face;
@@ -51,6 +52,11 @@ bool Polyhedron::loadFromOFF(const std::string& filename) {
                 file >> face_indices[j];
             }
             temp_faces_from_file.push_back(face_indices);
+            
+            // Read weight for this face
+            double weight = 1.0; // Default weight
+            file >> weight;
+            temp_face_weights.push_back(weight);
         }
     }
     file.close();
@@ -71,9 +77,11 @@ bool Polyhedron::loadFromOFF(const std::string& filename) {
     using EdgeKey = std::pair<int, int>;
     std::map<EdgeKey, HE_HalfEdge*> edgeMap;
 
-    for (const auto& face_indices : temp_faces_from_file) {
+    for (size_t face_idx = 0; face_idx < temp_faces_from_file.size(); ++face_idx) {
+        const auto& face_indices = temp_faces_from_file[face_idx];
         auto f = std::make_unique<HE_Face>();
         f->id = faces_.size();
+        f->weight = temp_face_weights[face_idx]; // Set weight from file
         
         HE_Face* current_face = f.get();
         faces_.push_back(std::move(f)); 
@@ -125,6 +133,12 @@ bool Polyhedron::loadFromOFF(const std::string& filename) {
     }
     
     std::cout << "Successfully loaded and built half-edge structure from " << filename << std::endl;
+    std::cout << "Face weights loaded: ";
+    for (size_t i = 0; i < temp_face_weights.size(); ++i) {
+        std::cout << "F" << i << "=" << temp_face_weights[i] << " ";
+        if ((i + 1) % 6 == 0) std::cout << std::endl << "                     "; // Line break every 6 faces
+    }
+    std::cout << std::endl;
     return true;
 }
 

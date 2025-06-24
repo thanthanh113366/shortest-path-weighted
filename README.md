@@ -28,19 +28,36 @@ This project implements a computational geometry library focused on finding appr
 ### Building
 ```bash
 # Compile the test application
-g++ -o test_app test.cpp ShortestPathLib.cpp -std=c++11
+g++ -o test_app test.cpp ShortestPathLib.cpp -std=c++14
 
 # Run the test
 ./test_app
 ```
 
 ### Input Format
-The library accepts 3D models in OFF (Object File Format):
+The library accepts 3D models in **Extended OFF format** with face weights:
 ```
 OFF
 <num_vertices> <num_faces> <num_edges>
 <vertex_coordinates>
-<face_definitions>
+<face_definitions_with_weights>
+```
+
+**Extended Face Definition Format:**
+```
+3 v1 v2 v3 weight
+```
+
+**Example:**
+```
+OFF
+8 12 0
+1 1 -1
+1 -1 -1
+...
+3 0 1 2 1.0    # Triangle with vertices 0,1,2 and weight 1.0
+3 0 2 3 1.2    # Triangle with vertices 0,2,3 and weight 1.2
+...
 ```
 
 ## 📊 Example Output
