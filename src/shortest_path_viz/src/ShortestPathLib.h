@@ -9,21 +9,21 @@
 
 /**
  * @file ShortestPathLib.h
- * @brief Library for computing epsilon-approximate shortest paths on polyhedral surfaces.
+ * @brief A library for computing epsilon-approximate shortest paths on polyhedral surfaces.
  * 
- * Based on "Approximating Shortest Paths on a Polyhedral Surface" by Aleksandrov et al.
+ * Implementation based on "Approximating Shortest Paths on a Polyhedral Surface" by Aleksandrov et al.
  * 
- * Current implementation:
- * - Half-Edge data structure and OFF file loading
- * - Paper-compliant validation (triangular faces, positive weights, non-degenerate geometry)
- * - Geometric parameter computation (h_v, theta_v, r_v, delta) for all vertices  
- * - Steiner point placement on edges using geometric progression
- * - Steiner point merging to remove overlapping points on each edge
+ * Implemented Tasks:
+ * - Task 1.1: Half-Edge data structure and OFF file loading
+ * - Task 1.2: Paper-compliant validation (triangular faces, positive weights, non-degenerate geometry)
+ * - Task 2.1: Geometric parameter computation (h_v, θ_v, r_v, δ) for all vertices  
+ * - Task 2.2: Steiner point placement on edges using geometric progression
+ * - Task 2.3: Steiner point merging to remove overlapping points on each edge
  * 
- * TODO:
- * - Approximation graph construction
- * - Dijkstra shortest path algorithm on approximation graph
- * - Graph pruning optimization
+ * Pending Tasks:
+ * - Task 3: Approximation graph construction
+ * - Task 4: Dijkstra shortest path algorithm on approximation graph
+ * - Task 5: Graph pruning optimization
  */
 
 // --- Core Half-Edge Data Structures ---
@@ -106,17 +106,17 @@ struct HE_HalfEdge {
 
 /**
  * @class Polyhedron
- * @brief Container class for the entire polyhedron using Half-Edge structure.
+ * @brief A container class for the entire polyhedron, built using the Half-Edge structure.
  * 
- * Implements the epsilon-approximation algorithm for weighted shortest paths
- * on polyhedral surfaces according to Aleksandrov et al. paper.
+ * This class implements the epsilon-approximation algorithm for weighted shortest paths
+ * on polyhedral surfaces according to Aleksandrov et al. paper specifications.
  * 
- * Features:
- * - Half-Edge topology for efficient surface navigation
- * - Paper-compliant validation (no watertight requirement)
- * - Geometric parameter computation for approximation quality
- * - Steiner point placement and merging for surface discretization
- * - Memory management using smart pointers
+ * Key Features:
+ * - Task 1.1: Half-Edge topology for efficient surface navigation
+ * - Task 1.2: Paper-compliant validation (no watertight requirement)
+ * - Task 2.1: Geometric parameter computation for approximation quality
+ * - Task 2.2-2.3: Steiner point placement and merging for surface discretization
+ * - Memory management for all components using smart pointers
  */
 class Polyhedron {
 public:
@@ -171,21 +171,15 @@ public:
     /**
      * @brief Merges overlapping Steiner points on each edge (Task 2.3)
      * Removes redundant points that are too close to optimize graph construction
-     * @param threshold Maximum distance for points to be considered overlapping
      * @return true if merging completed successfully
      */
-    bool mergeSteinerPoints(double threshold = 0.05);
+    bool mergeSteinerPoints();
     
     /**
      * @brief Get all Steiner points after placement and merging
      * @return const reference to vector of Steiner points
      */
     const std::vector<SteinerPoint>& getSteinerPoints() const;
-    
-    /**
-     * @brief Display geometric parameters for all vertices (Task 2.1)
-     */
-    void displayGeometricParameters() const;
     
     /**
      * @brief Computes the epsilon-approximate shortest path on the surface of a polyhedron.
@@ -218,6 +212,7 @@ private:
     // === Task 2.1: Geometric Parameter Computation ===
     double computeVertexHeight_v2(const HE_Vertex* vertex);      // h_v: distance to boundary
     double computeVertexMinAngle(const HE_Vertex* vertex);       // θ_v: minimum angle
+    void displayGeometricParameters() const;
     
     // === Task 2.2: Steiner Point Placement ===
     void placeSteinerPointsOnEdge(HE_HalfEdge* edge, int source_vertex_id);
@@ -225,7 +220,7 @@ private:
     void displaySteinerPoints() const;
     
     // === Task 2.3: Steiner Point Merging ===
-    void mergeSteinerPointsOnEdge(const std::pair<int, int>& edge_key, double threshold);
+    void mergeSteinerPointsOnEdge(const std::pair<int, int>& edge_key);
     bool arePointsTooClose(const SteinerPoint& p1, const SteinerPoint& p2, double threshold);
     std::vector<SteinerPoint> getPointsOnEdge(const std::pair<int, int>& edge_key);
     void replacePointsOnEdge(const std::pair<int, int>& edge_key, const std::vector<SteinerPoint>& new_points);

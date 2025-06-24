@@ -2,11 +2,11 @@
 
 A C++ library for computing epsilon-approximate shortest paths on polyhedral surfaces using Half-Edge data structure.
 
-## 📋 Overview
+## Overview
 
 This project implements a computational geometry library focused on finding approximate shortest paths on 3D polyhedral surfaces. It uses the Half-Edge data structure for efficient representation and traversal of polyhedral meshes.
 
-## 🏗️ Architecture
+## Architecture
 
 ### Core Data Structures
 - **HE_Vertex**: Vertices with 3D coordinates
@@ -14,22 +14,22 @@ This project implements a computational geometry library focused on finding appr
 - **HE_HalfEdge**: Directed edges forming the mesh topology
 
 ### Key Features
-- ✅ OFF file format loader with face weights
-- ✅ Half-Edge data structure implementation
-- ✅ Paper-compliant polyhedron validation
-- ✅ Support for both closed and open meshes
-- ⚠️ Shortest path algorithm (in development)
+- OFF file format loader with face weights
+- Half-Edge data structure implementation
+- Paper-compliant polyhedron validation
+- Support for both closed and open meshes
+- Shortest path algorithm (in development)
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
-- C++ compiler with C++11 support
+- C++ compiler with C++17 support
 - Make or CMake (optional)
 
 ### Building
 ```bash
 # Compile the test application
-g++ -o test_app test.cpp ShortestPathLib.cpp -std=c++14
+g++ -o test_app test.cpp ShortestPathLib.cpp -std=c++17
 
 # Run the test
 ./test_app
@@ -70,13 +70,13 @@ OFF
 ```
 
 **Validation:**
-- ✅ Triangular faces verification
-- ✅ Positive weights checking  
-- ✅ Geometric degeneracy detection
-- ✅ Minimum angle computation
-- ✅ Vertex height calculation (h_v)
+- Triangular faces verification
+- Positive weights checking  
+- Geometric degeneracy detection
+- Minimum angle computation
+- Vertex height calculation (h_v)
 
-## 📊 Example Output
+## Example Output
 ```
 --- Starting Polyhedron Loader Test ---
 Successfully loaded and built half-edge structure from cube.off
@@ -88,20 +88,20 @@ Basic Stats:
   - Loaded Half-Edges: 36
 ```
 
-## 🔧 Development Status
+## Development Status
 
 ### Completed
-- [x] Half-Edge data structure
-- [x] OFF file loader
-- [x] Mesh topology verification
-- [x] Neighbor traversal algorithms
+- Half-Edge data structure
+- OFF file loader
+- Mesh topology verification
+- Neighbor traversal algorithms
 
 ### In Progress
-- [ ] Epsilon-approximate shortest path algorithm
-- [ ] Path optimization
-- [ ] Performance benchmarks
+- Epsilon-approximate shortest path algorithm
+- Path optimization
+- Performance benchmarks
 
-## 📁 Project Structure
+## Project Structure
 ```
 ├── ShortestPathLib.h      # Header file with data structures
 ├── ShortestPathLib.cpp    # Implementation
@@ -110,15 +110,15 @@ Basic Stats:
 └── README.md             # This file
 ```
 
-## 🤝 Contributing
+## Contributing
 
 This is a research/educational project. Contributions are welcome!
 
-## 📄 License
+## License
 
 This project is open source. Please check the license file for more details.
 
-## 🔬 Applications
+## Applications
 
 Potential applications include:
 - Computer Graphics

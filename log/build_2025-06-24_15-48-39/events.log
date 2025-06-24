@@ -1,0 +1,200 @@
+[0.000000] (-) TimerEvent: {}
+[0.000704] (shortest_path_viz) JobQueued: {'identifier': 'shortest_path_viz', 'dependencies': OrderedDict()}
+[0.000982] (shortest_path_viz) JobStarted: {'identifier': 'shortest_path_viz'}
+[0.016699] (shortest_path_viz) JobProgress: {'identifier': 'shortest_path_viz', 'progress': 'cmake'}
+[0.018489] (shortest_path_viz) JobProgress: {'identifier': 'shortest_path_viz', 'progress': 'build'}
+[0.019558] (shortest_path_viz) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/hmt/shortest_path_weighted/build/shortest_path_viz', '--', '-j8', '-l8'], 'cwd': '/home/hmt/shortest_path_weighted/build/shortest_path_viz', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'hmt'), ('ROS_PACKAGE_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/share'), ('GIT_ASKPASS', '/home/hmt/.cursor-server/bin/979ba33804ac150108481c14e0b5cb970bda3260/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/hmt'), ('DISABLE_AUTO_UPDATE', 'true'), ('TERM_PROGRAM_VERSION', '1.1.3'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-f776b5b6-d9a1-4a6f-8cdf-cb41e6a88def.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/hmt/.cursor-server/bin/979ba33804ac150108481c14e0b5cb970bda3260/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/hmt/.cursor-server/bin/979ba33804ac150108481c14e0b5cb970bda3260/node'), ('npm_config_yes', 'true'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/hmt/shortest_path_weighted/install:/home/hmt/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'hmt'), ('NAME', 'DESKTOP-2H1UG1S'), ('WSL_INTEROP', '/run/WSL/314_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/lib/x86_64-linux-gnu/pkgconfig:/home/hmt/ros2_ws/install/distance_warning_interfaces/lib/pkgconfig'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '1'), ('COMPOSER_NO_INTERACTION', '1'), ('PATH', '/home/hmt/.cursor-server/bin/979ba33804ac150108481c14e0b5cb970bda3260/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files (x86)/Microsoft SQL Server/160/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/160/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/160/DTS/Binn/:/mnt/f/Program Files/nodejs/:/mnt/f/Program Files/Git/cmd:/mnt/c/Users/hmt/AppData/Local/pnpm:/mnt/f/Program Files/Scripts/:/mnt/f/Program Files/:/mnt/c/Users/hmt/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/hmt/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/hmt/AppData/Roaming/npm:/mnt/f/Program Files/cursor/resources/app/bin:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000/'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-7ccb8378d7.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/hmt/shortest_path_weighted/install/shortest_path_viz:/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/hmt/shortest_path_weighted/build/shortest_path_viz'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/hmt/ros2_ws/install/distance_warning/lib/python3.10/site-packages:/home/hmt/ros2_ws/install/distance_warning_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('PIP_NO_INPUT', 'true'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/hmt/shortest_path_weighted/install/shortest_path_viz:/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble:/home/hmt/ros2_ws/install/distance_warning_interfaces'), ('WSLENV', '')]), 'shell': False}
+[0.098873] (-) TimerEvent: {}
+[0.120544] (shortest_path_viz) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.199056] (-) TimerEvent: {}
+[0.299652] (-) TimerEvent: {}
+[0.311637] (shortest_path_viz) StdoutLine: {'line': b'-- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.399869] (-) TimerEvent: {}
+[0.500409] (-) TimerEvent: {}
+[0.601149] (-) TimerEvent: {}
+[0.701873] (-) TimerEvent: {}
+[0.795795] (shortest_path_viz) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.799981] (shortest_path_viz) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.801941] (-) TimerEvent: {}
+[0.810131] (shortest_path_viz) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.825212] (shortest_path_viz) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.854203] (shortest_path_viz) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.902192] (-) TimerEvent: {}
+[0.921729] (shortest_path_viz) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.925666] (shortest_path_viz) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.002314] (-) TimerEvent: {}
+[1.102857] (-) TimerEvent: {}
+[1.203313] (-) TimerEvent: {}
+[1.303734] (-) TimerEvent: {}
+[1.404151] (-) TimerEvent: {}
+[1.504558] (-) TimerEvent: {}
+[1.605007] (-) TimerEvent: {}
+[1.705442] (-) TimerEvent: {}
+[1.805872] (-) TimerEvent: {}
+[1.906275] (-) TimerEvent: {}
+[2.006755] (-) TimerEvent: {}
+[2.107178] (-) TimerEvent: {}
+[2.207697] (-) TimerEvent: {}
+[2.308162] (-) TimerEvent: {}
+[2.408599] (-) TimerEvent: {}
+[2.509022] (-) TimerEvent: {}
+[2.609450] (-) TimerEvent: {}
+[2.709941] (-) TimerEvent: {}
+[2.810390] (-) TimerEvent: {}
+[2.910888] (-) TimerEvent: {}
+[3.011310] (-) TimerEvent: {}
+[3.111769] (-) TimerEvent: {}
+[3.212198] (-) TimerEvent: {}
+[3.312654] (-) TimerEvent: {}
+[3.413053] (-) TimerEvent: {}
+[3.513515] (-) TimerEvent: {}
+[3.613953] (-) TimerEvent: {}
+[3.714428] (-) TimerEvent: {}
+[3.814920] (-) TimerEvent: {}
+[3.915400] (-) TimerEvent: {}
+[4.015790] (-) TimerEvent: {}
+[4.116234] (-) TimerEvent: {}
+[4.216668] (-) TimerEvent: {}
+[4.317106] (-) TimerEvent: {}
+[4.417625] (-) TimerEvent: {}
+[4.518078] (-) TimerEvent: {}
+[4.618506] (-) TimerEvent: {}
+[4.718898] (-) TimerEvent: {}
+[4.819346] (-) TimerEvent: {}
+[4.919780] (-) TimerEvent: {}
+[5.020231] (-) TimerEvent: {}
+[5.120649] (-) TimerEvent: {}
+[5.221067] (-) TimerEvent: {}
+[5.321485] (-) TimerEvent: {}
+[5.421942] (-) TimerEvent: {}
+[5.522407] (-) TimerEvent: {}
+[5.622892] (-) TimerEvent: {}
+[5.723305] (-) TimerEvent: {}
+[5.813909] (shortest_path_viz) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[5.823449] (-) TimerEvent: {}
+[5.923888] (-) TimerEvent: {}
+[5.926250] (shortest_path_viz) StdoutLine: {'line': b'-- Found geometry_msgs: 4.8.0 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[5.955314] (shortest_path_viz) StdoutLine: {'line': b'-- Found visualization_msgs: 4.8.0 (/opt/ros/humble/share/visualization_msgs/cmake)\n'}
+[6.009573] (shortest_path_viz) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[6.024093] (-) TimerEvent: {}
+[6.107221] (shortest_path_viz) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[6.107438] (shortest_path_viz) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/hmt/shortest_path_weighted/src/shortest_path_viz/src\n'}
+[6.107519] (shortest_path_viz) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[6.108020] (shortest_path_viz) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[6.108681] (shortest_path_viz) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[6.109251] (shortest_path_viz) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[6.110208] (shortest_path_viz) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[6.110326] (shortest_path_viz) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[6.110756] (shortest_path_viz) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[6.112883] (shortest_path_viz) StdoutLine: {'line': b'-- Configuring done\n'}
+[6.124270] (-) TimerEvent: {}
+[6.129528] (shortest_path_viz) StdoutLine: {'line': b'-- Generating done\n'}
+[6.135590] (shortest_path_viz) StdoutLine: {'line': b'-- Build files have been written to: /home/hmt/shortest_path_weighted/build/shortest_path_viz\n'}
+[6.173363] (shortest_path_viz) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target shortest_path_visualizer\x1b[0m\n'}
+[6.192776] (shortest_path_viz) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/shortest_path_visualizer.dir/src/shortest_path_visualizer.cpp.o\x1b[0m\n'}
+[6.224551] (-) TimerEvent: {}
+[6.325087] (-) TimerEvent: {}
+[6.425643] (-) TimerEvent: {}
+[6.526383] (-) TimerEvent: {}
+[6.626887] (-) TimerEvent: {}
+[6.727535] (-) TimerEvent: {}
+[6.828100] (-) TimerEvent: {}
+[6.928609] (-) TimerEvent: {}
+[7.029072] (-) TimerEvent: {}
+[7.129593] (-) TimerEvent: {}
+[7.230211] (-) TimerEvent: {}
+[7.330900] (-) TimerEvent: {}
+[7.431477] (-) TimerEvent: {}
+[7.532066] (-) TimerEvent: {}
+[7.632565] (-) TimerEvent: {}
+[7.732987] (-) TimerEvent: {}
+[7.833581] (-) TimerEvent: {}
+[7.934087] (-) TimerEvent: {}
+[8.034620] (-) TimerEvent: {}
+[8.135162] (-) TimerEvent: {}
+[8.235668] (-) TimerEvent: {}
+[8.336164] (-) TimerEvent: {}
+[8.436785] (-) TimerEvent: {}
+[8.537258] (-) TimerEvent: {}
+[8.637782] (-) TimerEvent: {}
+[8.738342] (-) TimerEvent: {}
+[8.838771] (-) TimerEvent: {}
+[8.939289] (-) TimerEvent: {}
+[9.039806] (-) TimerEvent: {}
+[9.140236] (-) TimerEvent: {}
+[9.240779] (-) TimerEvent: {}
+[9.341680] (-) TimerEvent: {}
+[9.442712] (-) TimerEvent: {}
+[9.543302] (-) TimerEvent: {}
+[9.643856] (-) TimerEvent: {}
+[9.744364] (-) TimerEvent: {}
+[9.844829] (-) TimerEvent: {}
+[9.945339] (-) TimerEvent: {}
+[10.045942] (-) TimerEvent: {}
+[10.146544] (-) TimerEvent: {}
+[10.247056] (-) TimerEvent: {}
+[10.347544] (-) TimerEvent: {}
+[10.448100] (-) TimerEvent: {}
+[10.548691] (-) TimerEvent: {}
+[10.649193] (-) TimerEvent: {}
+[10.749650] (-) TimerEvent: {}
+[10.850280] (-) TimerEvent: {}
+[10.950833] (-) TimerEvent: {}
+[11.051297] (-) TimerEvent: {}
+[11.151851] (-) TimerEvent: {}
+[11.252341] (-) TimerEvent: {}
+[11.352889] (-) TimerEvent: {}
+[11.453357] (-) TimerEvent: {}
+[11.553861] (-) TimerEvent: {}
+[11.654440] (-) TimerEvent: {}
+[11.754957] (-) TimerEvent: {}
+[11.855473] (-) TimerEvent: {}
+[11.955972] (-) TimerEvent: {}
+[12.056495] (-) TimerEvent: {}
+[12.157141] (-) TimerEvent: {}
+[12.257863] (-) TimerEvent: {}
+[12.358623] (-) TimerEvent: {}
+[12.459166] (-) TimerEvent: {}
+[12.559630] (-) TimerEvent: {}
+[12.660128] (-) TimerEvent: {}
+[12.760600] (-) TimerEvent: {}
+[12.779897] (shortest_path_viz) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX executable shortest_path_visualizer\x1b[0m\n'}
+[12.860859] (-) TimerEvent: {}
+[12.961325] (-) TimerEvent: {}
+[13.061900] (-) TimerEvent: {}
+[13.162400] (-) TimerEvent: {}
+[13.262976] (-) TimerEvent: {}
+[13.265664] (shortest_path_viz) StdoutLine: {'line': b'[100%] Built target shortest_path_visualizer\n'}
+[13.288460] (shortest_path_viz) CommandEnded: {'returncode': 0}
+[13.291011] (shortest_path_viz) JobProgress: {'identifier': 'shortest_path_viz', 'progress': 'install'}
+[13.305412] (shortest_path_viz) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/hmt/shortest_path_weighted/build/shortest_path_viz'], 'cwd': '/home/hmt/shortest_path_weighted/build/shortest_path_viz', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'hmt'), ('ROS_PACKAGE_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/share'), ('GIT_ASKPASS', '/home/hmt/.cursor-server/bin/979ba33804ac150108481c14e0b5cb970bda3260/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/hmt'), ('DISABLE_AUTO_UPDATE', 'true'), ('TERM_PROGRAM_VERSION', '1.1.3'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-f776b5b6-d9a1-4a6f-8cdf-cb41e6a88def.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/hmt/.cursor-server/bin/979ba33804ac150108481c14e0b5cb970bda3260/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/hmt/.cursor-server/bin/979ba33804ac150108481c14e0b5cb970bda3260/node'), ('npm_config_yes', 'true'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/hmt/shortest_path_weighted/install:/home/hmt/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'hmt'), ('NAME', 'DESKTOP-2H1UG1S'), ('WSL_INTEROP', '/run/WSL/314_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/lib/x86_64-linux-gnu/pkgconfig:/home/hmt/ros2_ws/install/distance_warning_interfaces/lib/pkgconfig'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '1'), ('COMPOSER_NO_INTERACTION', '1'), ('PATH', '/home/hmt/.cursor-server/bin/979ba33804ac150108481c14e0b5cb970bda3260/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files (x86)/Microsoft SQL Server/160/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/160/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/160/DTS/Binn/:/mnt/f/Program Files/nodejs/:/mnt/f/Program Files/Git/cmd:/mnt/c/Users/hmt/AppData/Local/pnpm:/mnt/f/Program Files/Scripts/:/mnt/f/Program Files/:/mnt/c/Users/hmt/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/hmt/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/hmt/AppData/Roaming/npm:/mnt/f/Program Files/cursor/resources/app/bin:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000/'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-7ccb8378d7.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/hmt/shortest_path_weighted/install/shortest_path_viz:/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/hmt/shortest_path_weighted/build/shortest_path_viz'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/hmt/ros2_ws/install/distance_warning/lib/python3.10/site-packages:/home/hmt/ros2_ws/install/distance_warning_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('PIP_NO_INPUT', 'true'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/hmt/shortest_path_weighted/install/shortest_path_viz:/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble:/home/hmt/ros2_ws/install/distance_warning_interfaces'), ('WSLENV', '')]), 'shell': False}
+[13.312928] (shortest_path_viz) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[13.313318] (shortest_path_viz) StdoutLine: {'line': b'-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/lib/shortest_path_viz/shortest_path_visualizer\n'}
+[13.315081] (shortest_path_viz) StdoutLine: {'line': b'-- Set runtime path of "/home/hmt/shortest_path_weighted/install/shortest_path_viz/lib/shortest_path_viz/shortest_path_visualizer" to ""\n'}
+[13.315281] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//launch\n'}
+[13.315607] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//launch/visualize.launch.py\n'}
+[13.315689] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//rviz\n'}
+[13.315848] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//rviz/shortest_path_viz.rviz\n'}
+[13.316003] (shortest_path_viz) StdoutLine: {'line': b'-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models/\n'}
+[13.316262] (shortest_path_viz) StdoutLine: {'line': b'-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//pyramid.off\n'}
+[13.316334] (shortest_path_viz) StdoutLine: {'line': b'-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//torus.off\n'}
+[13.316457] (shortest_path_viz) StdoutLine: {'line': b'-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//cube.off\n'}
+[13.316584] (shortest_path_viz) StdoutLine: {'line': b'-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//icosahedron.off\n'}
+[13.316886] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/ament_index/resource_index/package_run_dependencies/shortest_path_viz\n'}
+[13.317138] (shortest_path_viz) StdoutLine: {'line': b'-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/ament_index/resource_index/parent_prefix_path/shortest_path_viz\n'}
+[13.317396] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/ament_prefix_path.sh\n'}
+[13.317823] (shortest_path_viz) StdoutLine: {'line': b'-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/ament_prefix_path.dsv\n'}
+[13.317927] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/path.sh\n'}
+[13.317994] (shortest_path_viz) StdoutLine: {'line': b'-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/path.dsv\n'}
+[13.318137] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.bash\n'}
+[13.318285] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.sh\n'}
+[13.318662] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.zsh\n'}
+[13.318755] (shortest_path_viz) StdoutLine: {'line': b'-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.dsv\n'}
+[13.318976] (shortest_path_viz) StdoutLine: {'line': b'-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/package.dsv\n'}
+[13.319162] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/ament_index/resource_index/packages/shortest_path_viz\n'}
+[13.319487] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/cmake/shortest_path_vizConfig.cmake\n'}
+[13.319571] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/cmake/shortest_path_vizConfig-version.cmake\n'}
+[13.319627] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/package.xml\n'}
+[13.322050] (shortest_path_viz) CommandEnded: {'returncode': 0}
+[13.355514] (shortest_path_viz) JobEnded: {'identifier': 'shortest_path_viz', 'rc': 0}
+[13.357294] (-) EventReactorShutdown: {}

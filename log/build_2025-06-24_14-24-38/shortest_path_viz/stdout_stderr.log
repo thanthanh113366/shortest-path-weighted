@@ -1,0 +1,91 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found geometry_msgs: 4.8.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+-- Found visualization_msgs: 4.8.0 (/opt/ros/humble/share/visualization_msgs/cmake)
+-- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /home/hmt/shortest_path_weighted/src/shortest_path_viz/src
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/hmt/shortest_path_weighted/build/shortest_path_viz
+[ 33%] [32mBuilding CXX object CMakeFiles/shortest_path_visualizer.dir/src/shortest_path_visualizer.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/shortest_path_visualizer.dir/src/ShortestPathLib.cpp.o[0m
+In file included from [01m[K/usr/include/c++/11/cassert:44[m[K,
+                 from [01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:7[m[K:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:[m[K In member function ‘[01m[Kconst VertexGeometricParams& Polyhedron::getVertexGeometricParams(int) const[m[K’:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:472:38:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<VertexGeometricParams>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  472 |     assert(vertexID >= 0 && [01;35m[KvertexID < vertex_params_.size()[m[K && "Vertex ID out of bounds for geometric parameters.");
+      |                             [01;35m[K~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:[m[K In member function ‘[01m[Kvoid Polyhedron::displaySteinerPoints() const[m[K’:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:638:27:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<const SteinerPoint*>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  638 |         if ([01;35m[Kpoints.size() > show_count[m[K) {
+      |             [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/cassert:44[m[K,
+                 from [01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:7[m[K:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:[m[K In member function ‘[01m[KShortestPathResult Polyhedron::findApproximateShortestPath(int, int, double)[m[K’:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:817:48:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::unique_ptr<HE_Vertex> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  817 |     assert(startVertexID >= 0 && [01;35m[KstartVertexID < vertices_.size()[m[K && "Start vertex ID is out of bounds.");
+      |                                  [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:818:44:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::unique_ptr<HE_Vertex> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  818 |     assert(endVertexID >= 0 && [01;35m[KendVertexID < vertices_.size()[m[K && "End vertex ID is out of bounds.");
+      |                                [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~[m[K
+[100%] [32m[1mLinking CXX executable shortest_path_visualizer[0m
+[100%] Built target shortest_path_visualizer
+-- Install configuration: ""
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/lib/shortest_path_viz/shortest_path_visualizer
+-- Set runtime path of "/home/hmt/shortest_path_weighted/install/shortest_path_viz/lib/shortest_path_viz/shortest_path_visualizer" to ""
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//launch
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//launch/visualize.launch.py
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//rviz
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//rviz/shortest_path_viz.rviz
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/cube.off
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/ament_index/resource_index/package_run_dependencies/shortest_path_viz
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/ament_index/resource_index/parent_prefix_path/shortest_path_viz
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/ament_prefix_path.sh
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/ament_prefix_path.dsv
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/path.sh
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/path.dsv
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.bash
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.sh
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.zsh
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.dsv
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/package.dsv
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/ament_index/resource_index/packages/shortest_path_viz
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/cmake/shortest_path_vizConfig.cmake
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/cmake/shortest_path_vizConfig-version.cmake
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/package.xml

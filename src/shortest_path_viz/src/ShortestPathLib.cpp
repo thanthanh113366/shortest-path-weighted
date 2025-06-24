@@ -15,11 +15,11 @@
  * @file ShortestPathLib.cpp
  * @brief Implementation of epsilon-approximate shortest paths on polyhedral surfaces.
  * 
- * Implementation includes:
- * - Half-Edge data structure with paper-compliant validation
- * - Geometric parameter computation (h_v, theta_v, r_v, delta)
- * - Steiner point placement using geometric progression  
- * - Steiner point merging to reduce overlaps
+ * Tasks Implementation:
+ * - Tasks 1.1-1.2: Half-Edge data structure with paper-compliant validation
+ * - Task 2.1: Geometric parameter computation (h_v, θ_v, r_v, δ)
+ * - Task 2.2: Steiner point placement using geometric progression  
+ * - Task 2.3: Steiner point merging to reduce overlaps
  */
 
 #ifndef M_PI
@@ -34,7 +34,9 @@ double distance(const Vector3D& p1, const Vector3D& p2) {
     return std::sqrt(std::pow(p1.x - p2.x, 2) + std::pow(p1.y - p2.y, 2) + std::pow(p1.z - p2.z, 2));
 }
 
-// Half-Edge data structure and paper-compliant validation
+// ============================================================================
+// TASKS 1.1 & 1.2: HALF-EDGE DATA STRUCTURE AND PAPER-COMPLIANT VALIDATION
+// ============================================================================
 
 Polyhedron::~Polyhedron() {
     // std::unique_ptr will automatically handle memory deallocation.
@@ -173,7 +175,7 @@ bool Polyhedron::loadFromOFF(const std::string& filename) {
     return true;
 }
 
-// Paper-compliant validation functions
+// --- Task 1.2: Paper-Compliant Validation Functions ---
 
 bool Polyhedron::validatePolyhedronRequirements() {
     std::cout << "Validating polyhedron according to paper requirements..." << std::endl;
@@ -320,7 +322,9 @@ double Polyhedron::computeVertexHeight(const HE_Vertex* vertex) {
     return (min_height == std::numeric_limits<double>::max()) ? 1.0 : min_height; // Default fallback
 }
 
-// Geometric parameter computation (h_v, theta_v, r_v, delta)
+// ============================================================================
+// TASK 2.1: GEOMETRIC PARAMETER COMPUTATION (h_v, θ_v, r_v, δ)
+// ============================================================================
 
 bool Polyhedron::computeGeometricParameters(double epsilon) {
     std::cout << "\n=== Task 2.1: Computing Geometric Parameters ===" << std::endl;
@@ -469,7 +473,9 @@ const VertexGeometricParams& Polyhedron::getVertexGeometricParams(int vertexID) 
     return vertex_params_[vertexID];
 }
 
-// Steiner point placement using geometric progression
+// ============================================================================
+// TASK 2.2: STEINER POINT PLACEMENT USING GEOMETRIC PROGRESSION
+// ============================================================================
 
 bool Polyhedron::placeSteinerPoints() {
     std::cout << "\n=== Task 2.2: Placing Steiner Points ===" << std::endl;
@@ -640,9 +646,11 @@ const std::vector<SteinerPoint>& Polyhedron::getSteinerPoints() const {
     return steiner_points_;
 }
 
-// Steiner point merging to reduce overlaps
+// ============================================================================
+// TASK 2.3: STEINER POINT MERGING TO REDUCE OVERLAPS
+// ============================================================================
 
-bool Polyhedron::mergeSteinerPoints(double threshold) {
+bool Polyhedron::mergeSteinerPoints() {
     std::cout << "\n=== Task 2.3: Merging Steiner Points ===" << std::endl;
     
     if (steiner_points_.empty()) {
@@ -669,7 +677,7 @@ bool Polyhedron::mergeSteinerPoints(double threshold) {
     
     // Merge points on each edge
     for (const auto& edge_key : unique_edges) {
-        mergeSteinerPointsOnEdge(edge_key, threshold);
+        mergeSteinerPointsOnEdge(edge_key);
     }
     
     size_t final_count = steiner_points_.size();
@@ -680,7 +688,7 @@ bool Polyhedron::mergeSteinerPoints(double threshold) {
     return true;
 }
 
-void Polyhedron::mergeSteinerPointsOnEdge(const std::pair<int, int>& edge_key, double threshold) {
+void Polyhedron::mergeSteinerPointsOnEdge(const std::pair<int, int>& edge_key) {
     // Get all points on this edge
     std::vector<SteinerPoint> edge_points = getPointsOnEdge(edge_key);
     
@@ -704,7 +712,7 @@ void Polyhedron::mergeSteinerPointsOnEdge(const std::pair<int, int>& edge_key, d
     
     // Merge close points using paper's strategy
     std::vector<SteinerPoint> merged_points;
-    double merge_threshold = threshold; // Points closer than this will be merged
+    double merge_threshold = 0.05; // Points closer than this will be merged
     
     for (const auto& point : edge_points) {
         bool should_add = true;
