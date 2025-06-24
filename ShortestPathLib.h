@@ -170,11 +170,11 @@ public:
     
     /**
      * @brief Merges overlapping Steiner points on each edge (Task 2.3)
-     * Removes redundant points that are too close to optimize graph construction
-     * @param threshold Maximum distance for points to be considered overlapping
+     * Paper algorithm: Removes points where interval sizes from two geometric progressions become equal,
+     * eliminating larger intervals when smaller intervals overlap
      * @return true if merging completed successfully
      */
-    bool mergeSteinerPoints(double threshold = 0.05);
+    bool mergeSteinerPoints();
     
     /**
      * @brief Get all Steiner points after placement and merging
@@ -225,8 +225,8 @@ private:
     void displaySteinerPoints() const;
     
     // === Task 2.3: Steiner Point Merging ===
-    void mergeSteinerPointsOnEdge(const std::pair<int, int>& edge_key, double threshold);
-    bool arePointsTooClose(const SteinerPoint& p1, const SteinerPoint& p2, double threshold);
+    void mergeSteinerPointsOnEdge(const std::pair<int, int>& edge_key);
+    double computeIntervalSizeAt(const SteinerPoint& point, int source_vertex_id, const VertexGeometricParams& params);
     std::vector<SteinerPoint> getPointsOnEdge(const std::pair<int, int>& edge_key);
     void replacePointsOnEdge(const std::pair<int, int>& edge_key, const std::vector<SteinerPoint>& new_points);
 };

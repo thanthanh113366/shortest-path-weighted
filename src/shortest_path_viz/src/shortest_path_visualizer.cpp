@@ -33,8 +33,8 @@ private:
     void setup_polyhedron()
     {
         // Load cube mesh
-        if (!poly_.loadFromOFF("models/icosahedron.off")) {
-            RCLCPP_ERROR(this->get_logger(), "Failed to load models/icosahedron.off");
+        if (!poly_.loadFromOFF("models/extreme_asymmetric.off")) {
+            RCLCPP_ERROR(this->get_logger(), "Failed to load models/extreme_asymmetric.off");
             return;
         }
         

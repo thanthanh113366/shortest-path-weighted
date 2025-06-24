@@ -15,11 +15,11 @@
  * @file ShortestPathLib.cpp
  * @brief Implementation of epsilon-approximate shortest paths on polyhedral surfaces.
  * 
- * Tasks Implementation:
- * - Tasks 1.1-1.2: Half-Edge data structure with paper-compliant validation
- * - Task 2.1: Geometric parameter computation (h_v, θ_v, r_v, δ)
- * - Task 2.2: Steiner point placement using geometric progression  
- * - Task 2.3: Steiner point merging to reduce overlaps
+ * Implementation includes:
+ * - Half-Edge data structure with paper-compliant validation
+ * - Geometric parameter computation (h_v, theta_v, r_v, delta)
+ * - Steiner point placement using geometric progression  
+ * - Steiner point merging to reduce overlaps
  */
 
 #ifndef M_PI
@@ -34,9 +34,7 @@ double distance(const Vector3D& p1, const Vector3D& p2) {
     return std::sqrt(std::pow(p1.x - p2.x, 2) + std::pow(p1.y - p2.y, 2) + std::pow(p1.z - p2.z, 2));
 }
 
-// ============================================================================
-// TASKS 1.1 & 1.2: HALF-EDGE DATA STRUCTURE AND PAPER-COMPLIANT VALIDATION
-// ============================================================================
+// Half-Edge data structure and paper-compliant validation
 
 Polyhedron::~Polyhedron() {
     // std::unique_ptr will automatically handle memory deallocation.
@@ -175,7 +173,7 @@ bool Polyhedron::loadFromOFF(const std::string& filename) {
     return true;
 }
 
-// --- Task 1.2: Paper-Compliant Validation Functions ---
+// Paper-compliant validation functions
 
 bool Polyhedron::validatePolyhedronRequirements() {
     std::cout << "Validating polyhedron according to paper requirements..." << std::endl;
@@ -322,9 +320,7 @@ double Polyhedron::computeVertexHeight(const HE_Vertex* vertex) {
     return (min_height == std::numeric_limits<double>::max()) ? 1.0 : min_height; // Default fallback
 }
 
-// ============================================================================
-// TASK 2.1: GEOMETRIC PARAMETER COMPUTATION (h_v, θ_v, r_v, δ)
-// ============================================================================
+// Geometric parameter computation (h_v, theta_v, r_v, delta)
 
 bool Polyhedron::computeGeometricParameters(double epsilon) {
     std::cout << "\n=== Task 2.1: Computing Geometric Parameters ===" << std::endl;
@@ -473,9 +469,7 @@ const VertexGeometricParams& Polyhedron::getVertexGeometricParams(int vertexID) 
     return vertex_params_[vertexID];
 }
 
-// ============================================================================
-// TASK 2.2: STEINER POINT PLACEMENT USING GEOMETRIC PROGRESSION
-// ============================================================================
+// Steiner point placement using geometric progression
 
 bool Polyhedron::placeSteinerPoints() {
     std::cout << "\n=== Task 2.2: Placing Steiner Points ===" << std::endl;
@@ -646,12 +640,10 @@ const std::vector<SteinerPoint>& Polyhedron::getSteinerPoints() const {
     return steiner_points_;
 }
 
-// ============================================================================
-// TASK 2.3: STEINER POINT MERGING TO REDUCE OVERLAPS
-// ============================================================================
+// Steiner point merging using paper's interval-size algorithm (Task 2.3)
 
 bool Polyhedron::mergeSteinerPoints() {
-    std::cout << "\n=== Task 2.3: Merging Steiner Points ===" << std::endl;
+    std::cout << "\n=== Task 2.3: Merging Steiner Points (Paper Algorithm) ===" << std::endl;
     
     if (steiner_points_.empty()) {
         std::cerr << "Error: No Steiner points to merge. Call placeSteinerPoints() first." << std::endl;
@@ -673,16 +665,16 @@ bool Polyhedron::mergeSteinerPoints() {
         unique_edges.insert(edge_key);
     }
     
-    std::cout << "Merging points on " << unique_edges.size() << " unique edges..." << std::endl;
+    std::cout << "Applying paper algorithm on " << unique_edges.size() << " unique edges..." << std::endl;
     
-    // Merge points on each edge
+    // Apply paper's interval-based merging on each edge
     for (const auto& edge_key : unique_edges) {
         mergeSteinerPointsOnEdge(edge_key);
     }
     
     size_t final_count = steiner_points_.size();
     std::cout << "Final Steiner points: " << final_count 
-              << " (removed " << (initial_count - final_count) << " overlapping points)" << std::endl;
+              << " (eliminated " << (initial_count - final_count) << " points using interval analysis)" << std::endl;
     
     displaySteinerPoints();
     return true;
@@ -694,38 +686,49 @@ void Polyhedron::mergeSteinerPointsOnEdge(const std::pair<int, int>& edge_key) {
     
     if (edge_points.size() <= 1) return; // Nothing to merge
     
-    // Sort points by distance from first vertex
-    std::sort(edge_points.begin(), edge_points.end(), 
-        [edge_key](const SteinerPoint& a, const SteinerPoint& b) {
-            // Determine which vertex each point originated from
-            bool a_from_first = (a.source_vertex_id == edge_key.first);
-            bool b_from_first = (b.source_vertex_id == edge_key.first);
-            
-            // Calculate actual position along edge
-            double a_pos = a_from_first ? a.distance_from_source : 
-                          (a.edge->length - a.distance_from_source);
-            double b_pos = b_from_first ? b.distance_from_source : 
-                          (b.edge->length - b.distance_from_source);
-            
-            return a_pos < b_pos;
-        });
-    
-    // Merge close points using paper's strategy
-    std::vector<SteinerPoint> merged_points;
-    double merge_threshold = 0.05; // Points closer than this will be merged
+    // Separate points by their source vertex
+    std::vector<SteinerPoint> from_first_vertex;
+    std::vector<SteinerPoint> from_second_vertex;
     
     for (const auto& point : edge_points) {
-        bool should_add = true;
-        
-        // Check if this point is too close to any already added point
-        for (const auto& existing : merged_points) {
-            if (arePointsTooClose(point, existing, merge_threshold)) {
-                should_add = false;
-                break;
-            }
+        if (point.source_vertex_id == edge_key.first) {
+            from_first_vertex.push_back(point);
+        } else if (point.source_vertex_id == edge_key.second) {
+            from_second_vertex.push_back(point);
         }
-        
-        if (should_add) {
+    }
+    
+    // If we only have points from one vertex, no merging needed
+    if (from_first_vertex.empty() || from_second_vertex.empty()) {
+        return;
+    }
+    
+    // Sort each progression by distance from source
+    std::sort(from_first_vertex.begin(), from_first_vertex.end(), 
+        [](const SteinerPoint& a, const SteinerPoint& b) {
+            return a.distance_from_source < b.distance_from_source;
+        });
+    
+    std::sort(from_second_vertex.begin(), from_second_vertex.end(), 
+        [](const SteinerPoint& a, const SteinerPoint& b) {
+            return a.distance_from_source < b.distance_from_source;
+        });
+    
+    // Apply paper's algorithm: eliminate points where interval sizes become equal
+    std::vector<SteinerPoint> merged_points;
+    
+    // Keep points from first progression, eliminating those with larger intervals
+    // when smaller intervals exist in the second progression
+    for (const auto& point : from_first_vertex) {
+        if (!shouldEliminatePoint(point, from_second_vertex)) {
+            merged_points.push_back(point);
+        }
+    }
+    
+    // Keep points from second progression, eliminating those with larger intervals  
+    // when smaller intervals exist in the first progression
+    for (const auto& point : from_second_vertex) {
+        if (!shouldEliminatePoint(point, from_first_vertex)) {
             merged_points.push_back(point);
         }
     }
@@ -733,21 +736,51 @@ void Polyhedron::mergeSteinerPointsOnEdge(const std::pair<int, int>& edge_key) {
     // Debug output
     if (edge_points.size() != merged_points.size()) {
         std::cout << "  Edge (" << edge_key.first << "," << edge_key.second << "): "
-                  << edge_points.size() << " → " << merged_points.size() << " points" << std::endl;
+                  << from_first_vertex.size() << "+" << from_second_vertex.size() 
+                  << " → " << merged_points.size() << " points (interval-based elimination)" << std::endl;
     }
     
     // Replace points for this edge
     replacePointsOnEdge(edge_key, merged_points);
 }
 
-bool Polyhedron::arePointsTooClose(const SteinerPoint& p1, const SteinerPoint& p2, double threshold) {
-    // Compute 3D distance between points
-    double dx = p1.pos.x - p2.pos.x;
-    double dy = p1.pos.y - p2.pos.y;
-    double dz = p1.pos.z - p2.pos.z;
-    double distance = std::sqrt(dx*dx + dy*dy + dz*dz);
+double Polyhedron::computeIntervalSizeAt(const SteinerPoint& point, int source_vertex_id, const VertexGeometricParams& params) {
+    // According to paper: interval size at position i is r_v * δ^i * (δ-1)
+    // This represents the "gap" or interval between consecutive Steiner points
     
-    return distance < threshold;
+    if (point.progression_index < 0) return 0.0;
+    
+    // Interval size = distance to next point in progression = r_v * δ^i * (δ-1)
+    double interval_size = params.r_v * std::pow(params.delta, point.progression_index) * (params.delta - 1.0);
+    
+    return interval_size;
+}
+
+bool Polyhedron::shouldEliminatePoint(const SteinerPoint& point, const std::vector<SteinerPoint>& other_progression) {
+    // Paper algorithm: eliminate point if there are smaller intervals in the other progression
+    // that overlap with this point's interval
+    
+    const VertexGeometricParams& params = vertex_params_[point.source_vertex_id];
+    double this_interval_size = computeIntervalSizeAt(point, point.source_vertex_id, params);
+    
+    // Check if any point in the other progression has a smaller interval that overlaps
+    for (const auto& other_point : other_progression) {
+        const VertexGeometricParams& other_params = vertex_params_[other_point.source_vertex_id];
+        double other_interval_size = computeIntervalSizeAt(other_point, other_point.source_vertex_id, other_params);
+        
+        // If the other interval is smaller and positions overlap, eliminate this point
+        if (other_interval_size < this_interval_size) {
+            // Check positional overlap (simplified geometric test)
+            double distance_between = distance(point.pos, other_point.pos);
+            double combined_influence = (this_interval_size + other_interval_size) / 2.0;
+            
+            if (distance_between < combined_influence) {
+                return true; // Eliminate this point
+            }
+        }
+    }
+    
+    return false; // Keep this point
 }
 
 std::vector<SteinerPoint> Polyhedron::getPointsOnEdge(const std::pair<int, int>& edge_key) {

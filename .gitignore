@@ -41,5 +41,5 @@ Makefile
 Thumbs.db 
 
 # Local files
-./report.txt
-./code.txt
+report.txt
+code.txt

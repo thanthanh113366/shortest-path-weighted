@@ -37,7 +37,7 @@ int main() {
     std::cout << "--- Starting Polyhedron Loader Test ---" << std::endl;
 
     Polyhedron poly;
-    if (!poly.loadFromOFF("models/icosahedron.off")) {
+    if (!poly.loadFromOFF("models/extreme_asymmetric.off")) {
         std::cerr << "Test failed: Could not load or build the polyhedron." << std::endl;
         return 1;
     }
@@ -75,7 +75,7 @@ int main() {
 
     std::cout << "\n--- Task 2.3: Steiner Point Merging ---" << std::endl;
     int original_count = steiner_points.size();
-    poly.mergeSteinerPoints(0.05); // threshold = 0.05
+    poly.mergeSteinerPoints(); // Paper algorithm: interval-based elimination
     int merged_count = poly.getSteinerPoints().size();
     
     std::cout << "Points before merging: " << original_count << std::endl;
