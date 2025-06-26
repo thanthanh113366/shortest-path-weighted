@@ -1,0 +1,164 @@
+[0.000000] (-) TimerEvent: {}
+[0.000572] (shortest_path_viz) JobQueued: {'identifier': 'shortest_path_viz', 'dependencies': OrderedDict()}
+[0.000779] (shortest_path_viz) JobStarted: {'identifier': 'shortest_path_viz'}
+[0.010457] (shortest_path_viz) JobProgress: {'identifier': 'shortest_path_viz', 'progress': 'cmake'}
+[0.011888] (shortest_path_viz) JobProgress: {'identifier': 'shortest_path_viz', 'progress': 'build'}
+[0.012868] (shortest_path_viz) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/hmt/shortest_path_weighted/build/shortest_path_viz', '--', '-j8', '-l8'], 'cwd': '/home/hmt/shortest_path_weighted/build/shortest_path_viz', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'hmt'), ('ROS_PACKAGE_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/share'), ('GIT_ASKPASS', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/hmt'), ('OLDPWD', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90'), ('TERM_PROGRAM_VERSION', '1.1.5'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-85c32fbe-4002-4fab-bdc8-d33a370f6c33.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/hmt/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'hmt'), ('NAME', 'DESKTOP-2H1UG1S'), ('WSL_INTEROP', '/run/WSL/12754_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/lib/x86_64-linux-gnu/pkgconfig:/home/hmt/ros2_ws/install/distance_warning_interfaces/lib/pkgconfig'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files (x86)/Microsoft SQL Server/160/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/160/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/160/DTS/Binn/:/mnt/f/Program Files/nodejs/:/mnt/f/Program Files/Git/cmd:/mnt/c/Users/hmt/AppData/Local/pnpm:/mnt/f/Program Files/Scripts/:/mnt/f/Program Files/:/mnt/c/Users/hmt/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/hmt/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/hmt/AppData/Roaming/npm:/mnt/f/Program Files/cursor/resources/app/bin:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000/'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-7ccb8378d7.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/hmt/shortest_path_weighted/build/shortest_path_viz'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/hmt/ros2_ws/install/distance_warning/lib/python3.10/site-packages:/home/hmt/ros2_ws/install/distance_warning_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble:/home/hmt/ros2_ws/install/distance_warning_interfaces'), ('WSLENV', '')]), 'shell': False}
+[0.071630] (shortest_path_viz) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target shortest_path_visualizer\x1b[0m\n'}
+[0.094452] (shortest_path_viz) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/shortest_path_visualizer.dir/src/shortest_path_visualizer.cpp.o\x1b[0m\n'}
+[0.094773] (shortest_path_viz) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/shortest_path_visualizer.dir/src/ShortestPathLib.cpp.o\x1b[0m\n'}
+[0.097475] (-) TimerEvent: {}
+[0.198340] (-) TimerEvent: {}
+[0.299373] (-) TimerEvent: {}
+[0.399955] (-) TimerEvent: {}
+[0.500564] (-) TimerEvent: {}
+[0.601113] (-) TimerEvent: {}
+[0.701621] (-) TimerEvent: {}
+[0.802078] (-) TimerEvent: {}
+[0.902499] (-) TimerEvent: {}
+[1.003054] (-) TimerEvent: {}
+[1.103750] (-) TimerEvent: {}
+[1.178042] (shortest_path_viz) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/cassert:44\x1b[m\x1b[K,\n'}
+[1.178284] (shortest_path_viz) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:7\x1b[m\x1b[K:\n'}
+[1.178360] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kconst VertexGeometricParams& Polyhedron::getVertexGeometricParams(int) const\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.178415] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:473:38:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<VertexGeometricParams>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.178472] (shortest_path_viz) StderrLine: {'line': b'  473 |     assert(vertexID >= 0 && \x1b[01;35m\x1b[KvertexID < vertex_params_.size()\x1b[m\x1b[K && "Vertex ID out of bounds for geometric parameters.");\n'}
+[1.178534] (shortest_path_viz) StderrLine: {'line': b'      |                             \x1b[01;35m\x1b[K~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.204112] (-) TimerEvent: {}
+[1.214628] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid Polyhedron::displaySteinerPoints() const\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.214996] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:637:27:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<const SteinerPoint*>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} and \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.215186] (shortest_path_viz) StderrLine: {'line': b'  637 |         if (\x1b[01;35m\x1b[Kpoints.size() > show_count\x1b[m\x1b[K) {\n'}
+[1.215315] (shortest_path_viz) StderrLine: {'line': b'      |             \x1b[01;35m\x1b[K~~~~~~~~~~~~~~^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.224124] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kdouble Polyhedron::computeIntervalSizeAt(const SteinerPoint&, int, const VertexGeometricParams&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.224397] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:773:73:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksource_vertex_id\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.224489] (shortest_path_viz) StderrLine: {'line': b'  773 | double Polyhedron::computeIntervalSizeAt(const SteinerPoint& point, \x1b[01;35m\x1b[Kint source_vertex_id\x1b[m\x1b[K, const VertexGeometricParams& params) {\n'}
+[1.224561] (shortest_path_viz) StderrLine: {'line': b'      |                                                                     \x1b[01;35m\x1b[K~~~~^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.230371] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kbool Polyhedron::constructApproximationGraphEdges()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.230706] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:953:58:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<std::unique_ptr<HE_Face> >::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.230982] (shortest_path_viz) StderrLine: {'line': b'  953 |         if (faces_processed % 10 == 0 || \x1b[01;35m\x1b[Kfaces_processed == faces_.size()\x1b[m\x1b[K) {\n'}
+[1.231152] (shortest_path_viz) StderrLine: {'line': b'      |                                          \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.258054] (shortest_path_viz) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/cassert:44\x1b[m\x1b[K,\n'}
+[1.258293] (shortest_path_viz) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:7\x1b[m\x1b[K:\n'}
+[1.258384] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[KShortestPathResult Polyhedron::findApproximateShortestPath(int, int, double)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.258449] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:1196:48:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<std::unique_ptr<HE_Vertex> >::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.258511] (shortest_path_viz) StderrLine: {'line': b' 1196 |     assert(startVertexID >= 0 && \x1b[01;35m\x1b[KstartVertexID < vertices_.size()\x1b[m\x1b[K && "Start vertex ID is out of bounds.");\n'}
+[1.258563] (shortest_path_viz) StderrLine: {'line': b'      |                                  \x1b[01;35m\x1b[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.258612] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:1197:44:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<std::unique_ptr<HE_Vertex> >::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.258667] (shortest_path_viz) StderrLine: {'line': b' 1197 |     assert(endVertexID >= 0 && \x1b[01;35m\x1b[KendVertexID < vertices_.size()\x1b[m\x1b[K && "End vertex ID is out of bounds.");\n'}
+[1.258715] (shortest_path_viz) StderrLine: {'line': b'      |                                \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.304269] (-) TimerEvent: {}
+[1.340643] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<Vector3D> Polyhedron::reconstructPath(const std::vector<int>&, int, int)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.341688] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:1386:75:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kpredecessors\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.342571] (shortest_path_viz) StderrLine: {'line': b' 1386 | std::vector<Vector3D> Polyhedron::reconstructPath(\x1b[01;35m\x1b[Kconst std::vector<int>& predecessors\x1b[m\x1b[K,\n'}
+[1.342787] (shortest_path_viz) StderrLine: {'line': b'      |                                                   \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.343027] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:1387:55:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kstart_graph_id\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.343208] (shortest_path_viz) StderrLine: {'line': b' 1387 |                                                   \x1b[01;35m\x1b[Kint start_graph_id\x1b[m\x1b[K,\n'}
+[1.343280] (shortest_path_viz) StderrLine: {'line': b'      |                                                   \x1b[01;35m\x1b[K~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.343330] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:1388:55:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kend_graph_id\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.343384] (shortest_path_viz) StderrLine: {'line': b' 1388 |                                                   \x1b[01;35m\x1b[Kint end_graph_id\x1b[m\x1b[K) {\n'}
+[1.343436] (shortest_path_viz) StderrLine: {'line': b'      |                                                   \x1b[01;35m\x1b[K~~~~^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.404472] (-) TimerEvent: {}
+[1.505178] (-) TimerEvent: {}
+[1.605632] (-) TimerEvent: {}
+[1.706343] (-) TimerEvent: {}
+[1.807171] (-) TimerEvent: {}
+[1.907858] (-) TimerEvent: {}
+[2.008467] (-) TimerEvent: {}
+[2.108907] (-) TimerEvent: {}
+[2.209364] (-) TimerEvent: {}
+[2.310353] (-) TimerEvent: {}
+[2.411596] (-) TimerEvent: {}
+[2.512254] (-) TimerEvent: {}
+[2.613108] (-) TimerEvent: {}
+[2.714711] (-) TimerEvent: {}
+[2.815747] (-) TimerEvent: {}
+[2.917045] (-) TimerEvent: {}
+[3.017605] (-) TimerEvent: {}
+[3.118063] (-) TimerEvent: {}
+[3.218552] (-) TimerEvent: {}
+[3.318982] (-) TimerEvent: {}
+[3.419783] (-) TimerEvent: {}
+[3.520873] (-) TimerEvent: {}
+[3.621315] (-) TimerEvent: {}
+[3.721794] (-) TimerEvent: {}
+[3.822308] (-) TimerEvent: {}
+[3.922691] (-) TimerEvent: {}
+[4.023377] (-) TimerEvent: {}
+[4.124045] (-) TimerEvent: {}
+[4.224463] (-) TimerEvent: {}
+[4.324904] (-) TimerEvent: {}
+[4.425383] (-) TimerEvent: {}
+[4.525912] (-) TimerEvent: {}
+[4.626517] (-) TimerEvent: {}
+[4.727254] (-) TimerEvent: {}
+[4.827738] (-) TimerEvent: {}
+[4.928196] (-) TimerEvent: {}
+[5.028671] (-) TimerEvent: {}
+[5.129055] (-) TimerEvent: {}
+[5.229659] (-) TimerEvent: {}
+[5.330293] (-) TimerEvent: {}
+[5.430819] (-) TimerEvent: {}
+[5.531277] (-) TimerEvent: {}
+[5.631724] (-) TimerEvent: {}
+[5.732259] (-) TimerEvent: {}
+[5.832946] (-) TimerEvent: {}
+[5.933797] (-) TimerEvent: {}
+[6.034431] (-) TimerEvent: {}
+[6.134920] (-) TimerEvent: {}
+[6.235287] (-) TimerEvent: {}
+[6.335742] (-) TimerEvent: {}
+[6.438870] (-) TimerEvent: {}
+[6.542092] (-) TimerEvent: {}
+[6.645195] (-) TimerEvent: {}
+[6.748335] (-) TimerEvent: {}
+[6.850452] (-) TimerEvent: {}
+[6.951615] (-) TimerEvent: {}
+[7.053536] (-) TimerEvent: {}
+[7.156258] (-) TimerEvent: {}
+[7.259266] (-) TimerEvent: {}
+[7.359971] (-) TimerEvent: {}
+[7.464459] (-) TimerEvent: {}
+[7.498665] (shortest_path_viz) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable shortest_path_visualizer\x1b[0m\n'}
+[7.565024] (-) TimerEvent: {}
+[7.666895] (-) TimerEvent: {}
+[7.768587] (-) TimerEvent: {}
+[7.870490] (-) TimerEvent: {}
+[7.971683] (-) TimerEvent: {}
+[7.995254] (shortest_path_viz) StdoutLine: {'line': b'[100%] Built target shortest_path_visualizer\n'}
+[8.017843] (shortest_path_viz) CommandEnded: {'returncode': 0}
+[8.019962] (shortest_path_viz) JobProgress: {'identifier': 'shortest_path_viz', 'progress': 'install'}
+[8.032021] (shortest_path_viz) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/hmt/shortest_path_weighted/build/shortest_path_viz'], 'cwd': '/home/hmt/shortest_path_weighted/build/shortest_path_viz', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'hmt'), ('ROS_PACKAGE_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/share'), ('GIT_ASKPASS', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/hmt'), ('OLDPWD', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90'), ('TERM_PROGRAM_VERSION', '1.1.5'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-85c32fbe-4002-4fab-bdc8-d33a370f6c33.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/hmt/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'hmt'), ('NAME', 'DESKTOP-2H1UG1S'), ('WSL_INTEROP', '/run/WSL/12754_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/lib/x86_64-linux-gnu/pkgconfig:/home/hmt/ros2_ws/install/distance_warning_interfaces/lib/pkgconfig'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files (x86)/Microsoft SQL Server/160/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/160/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/160/DTS/Binn/:/mnt/f/Program Files/nodejs/:/mnt/f/Program Files/Git/cmd:/mnt/c/Users/hmt/AppData/Local/pnpm:/mnt/f/Program Files/Scripts/:/mnt/f/Program Files/:/mnt/c/Users/hmt/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/hmt/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/hmt/AppData/Roaming/npm:/mnt/f/Program Files/cursor/resources/app/bin:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000/'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-7ccb8378d7.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/hmt/shortest_path_weighted/build/shortest_path_viz'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/hmt/ros2_ws/install/distance_warning/lib/python3.10/site-packages:/home/hmt/ros2_ws/install/distance_warning_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble:/home/hmt/ros2_ws/install/distance_warning_interfaces'), ('WSLENV', '')]), 'shell': False}
+[8.046542] (shortest_path_viz) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[8.047039] (shortest_path_viz) StdoutLine: {'line': b'-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/lib/shortest_path_viz/shortest_path_visualizer\n'}
+[8.051533] (shortest_path_viz) StdoutLine: {'line': b'-- Set runtime path of "/home/hmt/shortest_path_weighted/install/shortest_path_viz/lib/shortest_path_viz/shortest_path_visualizer" to ""\n'}
+[8.052358] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//launch\n'}
+[8.053208] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//launch/visualize.launch.py\n'}
+[8.055455] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//rviz\n'}
+[8.056608] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//rviz/shortest_path_viz.rviz\n'}
+[8.057102] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models/\n'}
+[8.057197] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//asymmetric_complex.off\n'}
+[8.057256] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//pyramid.off\n'}
+[8.057308] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//torus.off\n'}
+[8.057357] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//extreme_asymmetric.off\n'}
+[8.057406] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//irregular_mesh.off\n'}
+[8.057456] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//cube.off\n'}
+[8.057505] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//icosahedron.off\n'}
+[8.057554] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/ament_index/resource_index/package_run_dependencies/shortest_path_viz\n'}
+[8.057603] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/ament_index/resource_index/parent_prefix_path/shortest_path_viz\n'}
+[8.057653] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/ament_prefix_path.sh\n'}
+[8.057703] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/ament_prefix_path.dsv\n'}
+[8.057756] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/path.sh\n'}
+[8.057931] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/path.dsv\n'}
+[8.058092] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.bash\n'}
+[8.058346] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.sh\n'}
+[8.058410] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.zsh\n'}
+[8.058626] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.dsv\n'}
+[8.058808] (shortest_path_viz) StdoutLine: {'line': b'-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/package.dsv\n'}
+[8.059071] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/ament_index/resource_index/packages/shortest_path_viz\n'}
+[8.059386] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/cmake/shortest_path_vizConfig.cmake\n'}
+[8.059567] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/cmake/shortest_path_vizConfig-version.cmake\n'}
+[8.060017] (shortest_path_viz) StdoutLine: {'line': b'-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/package.xml\n'}
+[8.061757] (shortest_path_viz) CommandEnded: {'returncode': 0}
+[8.072018] (-) TimerEvent: {}
+[8.092561] (shortest_path_viz) JobEnded: {'identifier': 'shortest_path_viz', 'rc': 0}
+[8.096504] (-) EventReactorShutdown: {}

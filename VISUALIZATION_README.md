@@ -49,6 +49,20 @@ ros2 launch shortest_path_viz visualize.launch.py
   - `δ`: Geometric progression factor
 - ROS topic: `/geometric_params`
 
+### Approximation Graph (Task 3)
+- **Graph Vertices**: Small spheres representing all vertices in the approximation graph
+  - White spheres: Original polyhedron vertices
+  - Cyan spheres: Steiner points
+- **Graph Edges**: Thin lines showing connections in complete subgraphs
+  - Color-coded by weight: Blue (light) → Red (heavy)
+  - Semi-transparent to avoid visual clutter
+  - Limited display (2000 edges max) for performance
+- **Graph Statistics**: Yellow text showing:
+  - Total vertices and edges count
+  - Weight range
+  - Performance info
+- ROS topic: `/approximation_graph`
+
 ## RViz2 Controls
 
 ### Navigation
@@ -69,6 +83,7 @@ ros2 launch shortest_path_viz visualize.launch.py
 - Task 2.1: Geometric parameters displayed as text
 - Task 2.2: Steiner point placement with geometric progression
 - Task 2.3: Merged points (overlaps removed)
+- Task 3.1-3.2: Approximation graph with complete subgraphs
 
 ### Updates
 - Data publishes every 1 second
@@ -103,10 +118,11 @@ shortest_path_visualizer
 ### Debug Commands
 ```bash
 # Check topics
-ros2 topic list | grep -E "(polyhedron|steiner|geometric)"
+ros2 topic list | grep -E "(polyhedron|steiner|geometric|approximation)"
 
 # Monitor messages
 ros2 topic echo /steiner_points
+ros2 topic echo /approximation_graph
 
 # Node info
 ros2 node info /shortest_path_visualizer
@@ -119,11 +135,13 @@ ros2 node info /shortest_path_visualizer
 - Culling: Hidden markers not rendered
 - Batching: MarkerArrays for efficiency
 
-### Stats for Cube Mesh
-- Vertices: 8 (red spheres)
+### Stats for extreme_asymmetric.off
+- Original Vertices: 6 (red spheres)
 - Edges: 18 (gray lines)  
-- Steiner Points: ~252 (colored spheres after merging)
-- Text Labels: 8 (geometric parameters)
+- Steiner Points: ~300 (colored spheres after merging)
+- Graph Vertices: 306 (white + cyan spheres)
+- Graph Edges: ~22,814 (showing 2000 for performance)
+- Text Labels: 6 (geometric parameters) + 1 (graph stats)
 
 ## Future Work
 

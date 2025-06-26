@@ -1,0 +1,39 @@
+[0.022s] Invoking command in '/home/hmt/shortest_path_weighted/build/shortest_path_viz': CMAKE_PREFIX_PATH=/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --build /home/hmt/shortest_path_weighted/build/shortest_path_viz -- -j8 -l8
+[0.083s] [ 33%] [32mBuilding CXX object CMakeFiles/shortest_path_visualizer.dir/src/shortest_path_visualizer.cpp.o[0m
+[6.883s] [ 66%] [32m[1mLinking CXX executable shortest_path_visualizer[0m
+[7.404s] [100%] Built target shortest_path_visualizer
+[7.418s] Invoked command in '/home/hmt/shortest_path_weighted/build/shortest_path_viz' returned '0': CMAKE_PREFIX_PATH=/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --build /home/hmt/shortest_path_weighted/build/shortest_path_viz -- -j8 -l8
+[7.429s] Invoking command in '/home/hmt/shortest_path_weighted/build/shortest_path_viz': CMAKE_PREFIX_PATH=/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --install /home/hmt/shortest_path_weighted/build/shortest_path_viz
+[7.436s] -- Install configuration: ""
+[7.436s] -- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/lib/shortest_path_viz/shortest_path_visualizer
+[7.438s] -- Set runtime path of "/home/hmt/shortest_path_weighted/install/shortest_path_viz/lib/shortest_path_viz/shortest_path_visualizer" to ""
+[7.439s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//launch
+[7.439s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//launch/__pycache__
+[7.440s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//launch/__pycache__/visualize.launch.cpython-310.pyc
+[7.440s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//launch/visualize.launch.py
+[7.440s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//rviz
+[7.441s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//rviz/shortest_path_viz.rviz
+[7.442s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models/
+[7.443s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//asymmetric_complex.off
+[7.443s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//pyramid.off
+[7.443s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//torus.off
+[7.443s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//extreme_asymmetric.off
+[7.443s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//irregular_mesh.off
+[7.444s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//cube.off
+[7.444s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//icosahedron.off
+[7.444s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/ament_index/resource_index/package_run_dependencies/shortest_path_viz
+[7.444s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/ament_index/resource_index/parent_prefix_path/shortest_path_viz
+[7.444s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/ament_prefix_path.sh
+[7.444s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/ament_prefix_path.dsv
+[7.444s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/path.sh
+[7.445s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/path.dsv
+[7.445s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.bash
+[7.446s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.sh
+[7.446s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.zsh
+[7.448s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.dsv
+[7.449s] -- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/package.dsv
+[7.449s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/ament_index/resource_index/packages/shortest_path_viz
+[7.449s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/cmake/shortest_path_vizConfig.cmake
+[7.449s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/cmake/shortest_path_vizConfig-version.cmake
+[7.449s] -- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/package.xml
+[7.450s] Invoked command in '/home/hmt/shortest_path_weighted/build/shortest_path_viz' returned '0': CMAKE_PREFIX_PATH=/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --install /home/hmt/shortest_path_weighted/build/shortest_path_viz

@@ -1,0 +1,143 @@
+[0.000000] (-) TimerEvent: {}
+[0.000757] (shortest_path_viz) JobQueued: {'identifier': 'shortest_path_viz', 'dependencies': OrderedDict()}
+[0.002276] (shortest_path_viz) JobStarted: {'identifier': 'shortest_path_viz'}
+[0.010138] (shortest_path_viz) JobProgress: {'identifier': 'shortest_path_viz', 'progress': 'cmake'}
+[0.016804] (shortest_path_viz) JobProgress: {'identifier': 'shortest_path_viz', 'progress': 'build'}
+[0.020812] (shortest_path_viz) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/hmt/shortest_path_weighted/src/shortest_path_viz/build/shortest_path_viz', '--', '-j8', '-l8'], 'cwd': '/home/hmt/shortest_path_weighted/src/shortest_path_viz/build/shortest_path_viz', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'hmt'), ('ROS_PACKAGE_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/share'), ('GIT_ASKPASS', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/hmt'), ('OLDPWD', '/home/hmt/shortest_path_weighted'), ('DISABLE_AUTO_UPDATE', 'true'), ('TERM_PROGRAM_VERSION', '1.1.5'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-7fa9b39c-de29-46e0-ae5f-1d7102669d1d.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90/node'), ('npm_config_yes', 'true'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/hmt/shortest_path_weighted/install:/home/hmt/ros2_ws/install:/home/hmt/shortest_path_weighted/src/shortest_path_viz/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'hmt'), ('NAME', 'DESKTOP-2H1UG1S'), ('WSL_INTEROP', '/run/WSL/12754_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/lib/x86_64-linux-gnu/pkgconfig:/home/hmt/ros2_ws/install/distance_warning_interfaces/lib/pkgconfig'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '1'), ('COMPOSER_NO_INTERACTION', '1'), ('PATH', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files (x86)/Microsoft SQL Server/160/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/160/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/160/DTS/Binn/:/mnt/f/Program Files/nodejs/:/mnt/f/Program Files/Git/cmd:/mnt/c/Users/hmt/AppData/Local/pnpm:/mnt/f/Program Files/Scripts/:/mnt/f/Program Files/:/mnt/c/Users/hmt/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/hmt/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/hmt/AppData/Roaming/npm:/mnt/f/Program Files/cursor/resources/app/bin:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000/'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-7ccb8378d7.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/hmt/shortest_path_weighted/install/shortest_path_viz:/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz:/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/hmt/shortest_path_weighted/src/shortest_path_viz/build/shortest_path_viz'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/hmt/ros2_ws/install/distance_warning/lib/python3.10/site-packages:/home/hmt/ros2_ws/install/distance_warning_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('PIP_NO_INPUT', 'true'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/hmt/shortest_path_weighted/install/shortest_path_viz:/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz:/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble:/home/hmt/ros2_ws/install/distance_warning_interfaces'), ('WSLENV', '')]), 'shell': False}
+[0.058538] (-) TimerEvent: {}
+[0.126070] (shortest_path_viz) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target shortest_path_visualizer\x1b[0m\n'}
+[0.159472] (shortest_path_viz) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/shortest_path_visualizer.dir/src/shortest_path_visualizer.cpp.o\x1b[0m\n'}
+[0.159774] (-) TimerEvent: {}
+[0.260272] (-) TimerEvent: {}
+[0.360973] (-) TimerEvent: {}
+[0.461589] (-) TimerEvent: {}
+[0.562296] (-) TimerEvent: {}
+[0.662840] (-) TimerEvent: {}
+[0.764125] (-) TimerEvent: {}
+[0.865207] (-) TimerEvent: {}
+[0.967180] (-) TimerEvent: {}
+[1.069117] (-) TimerEvent: {}
+[1.170843] (-) TimerEvent: {}
+[1.272432] (-) TimerEvent: {}
+[1.373987] (-) TimerEvent: {}
+[1.475408] (-) TimerEvent: {}
+[1.576747] (-) TimerEvent: {}
+[1.678085] (-) TimerEvent: {}
+[1.779338] (-) TimerEvent: {}
+[1.880682] (-) TimerEvent: {}
+[2.021521] (-) TimerEvent: {}
+[2.123959] (-) TimerEvent: {}
+[2.225442] (-) TimerEvent: {}
+[2.326753] (-) TimerEvent: {}
+[2.428098] (-) TimerEvent: {}
+[2.529498] (-) TimerEvent: {}
+[2.630609] (-) TimerEvent: {}
+[2.731803] (-) TimerEvent: {}
+[2.832704] (-) TimerEvent: {}
+[2.934014] (-) TimerEvent: {}
+[3.035026] (-) TimerEvent: {}
+[3.136298] (-) TimerEvent: {}
+[3.237434] (-) TimerEvent: {}
+[3.338600] (-) TimerEvent: {}
+[3.439747] (-) TimerEvent: {}
+[3.540999] (-) TimerEvent: {}
+[3.642221] (-) TimerEvent: {}
+[3.743192] (-) TimerEvent: {}
+[3.844348] (-) TimerEvent: {}
+[3.945369] (-) TimerEvent: {}
+[4.046327] (-) TimerEvent: {}
+[4.147139] (-) TimerEvent: {}
+[4.248031] (-) TimerEvent: {}
+[4.348605] (-) TimerEvent: {}
+[4.449602] (-) TimerEvent: {}
+[4.550345] (-) TimerEvent: {}
+[4.651289] (-) TimerEvent: {}
+[4.752189] (-) TimerEvent: {}
+[4.853555] (-) TimerEvent: {}
+[4.955522] (-) TimerEvent: {}
+[5.056819] (-) TimerEvent: {}
+[5.158867] (-) TimerEvent: {}
+[5.260206] (-) TimerEvent: {}
+[5.361066] (-) TimerEvent: {}
+[5.461790] (-) TimerEvent: {}
+[5.562639] (-) TimerEvent: {}
+[5.663357] (-) TimerEvent: {}
+[5.764718] (-) TimerEvent: {}
+[5.865552] (-) TimerEvent: {}
+[5.966550] (-) TimerEvent: {}
+[5.975104] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<Vector3D> ShortestPathVisualizer::getTriangleVertices(const HE_Face*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.975891] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:751:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kconst struct HE_Face\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kboundary\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.976113] (shortest_path_viz) StderrLine: {'line': b'  751 |         HE_HalfEdge* he = face->\x1b[01;31m\x1b[Kboundary\x1b[m\x1b[K;\n'}
+[5.976277] (shortest_path_viz) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.976426] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:754:45:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct HE_Vertex\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kx\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.976624] (shortest_path_viz) StderrLine: {'line': b'  754 |             vertices.push_back({he->origin->\x1b[01;31m\x1b[Kx\x1b[m\x1b[K, he->origin->y, he->origin->z});\n'}
+[5.976778] (shortest_path_viz) StderrLine: {'line': b'      |                                             \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.976927] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:754:60:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct HE_Vertex\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Ky\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.977173] (shortest_path_viz) StderrLine: {'line': b'  754 |             vertices.push_back({he->origin->x, he->origin->\x1b[01;31m\x1b[Ky\x1b[m\x1b[K, he->origin->z});\n'}
+[5.977463] (shortest_path_viz) StderrLine: {'line': b'      |                                                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.978098] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:754:75:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct HE_Vertex\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kz\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.978717] (shortest_path_viz) StderrLine: {'line': b'  754 |             vertices.push_back({he->origin->x, he->origin->y, he->origin->\x1b[01;31m\x1b[Kz\x1b[m\x1b[K});\n'}
+[5.979529] (shortest_path_viz) StderrLine: {'line': b'      |                                                                           \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.980071] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:754:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<Vector3D>::push_back(<brace-enclosed initializer list>)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.980417] (shortest_path_viz) StderrLine: {'line': b'  754 |             \x1b[01;31m\x1b[Kvertices.push_back({he->origin->x, he->origin->y, he->origin->z})\x1b[m\x1b[K;\n'}
+[5.980654] (shortest_path_viz) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.980831] (shortest_path_viz) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/vector:67\x1b[m\x1b[K,\n'}
+[5.980982] (shortest_path_viz) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/11/functional:62\x1b[m\x1b[K,\n'}
+[5.981072] (shortest_path_viz) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/11/pstl/glue_algorithm_defs.h:13\x1b[m\x1b[K,\n'}
+[5.981152] (shortest_path_viz) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/11/algorithm:74\x1b[m\x1b[K,\n'}
+[5.981230] (shortest_path_viz) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:18\x1b[m\x1b[K,\n'}
+[5.981464] (shortest_path_viz) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[5.981588] (shortest_path_viz) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[5.981670] (shortest_path_viz) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[5.981834] (shortest_path_viz) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:1\x1b[m\x1b[K:\n'}
+[5.982017] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/stl_vector.h:1187:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = Vector3D; _Alloc = std::allocator<Vector3D>; std::vector<_Tp, _Alloc>::value_type = Vector3D]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.982180] (shortest_path_viz) StderrLine: {'line': b' 1187 |       \x1b[01;36m\x1b[Kpush_back\x1b[m\x1b[K(const value_type& __x)\n'}
+[5.982328] (shortest_path_viz) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.982466] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/stl_vector.h:1187:35:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[K<brace-enclosed initializer list>\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kconst value_type&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kconst Vector3D&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.982572] (shortest_path_viz) StderrLine: {'line': b' 1187 |       push_back(\x1b[01;36m\x1b[Kconst value_type& __x\x1b[m\x1b[K)\n'}
+[5.982651] (shortest_path_viz) StderrLine: {'line': b'      |                 \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[5.982728] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/stl_vector.h:1203:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid std::vector<_Tp, _Alloc>::push_back(std::vector<_Tp, _Alloc>::value_type&&) [with _Tp = Vector3D; _Alloc = std::allocator<Vector3D>; std::vector<_Tp, _Alloc>::value_type = Vector3D]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.982861] (shortest_path_viz) StderrLine: {'line': b' 1203 |       \x1b[01;36m\x1b[Kpush_back\x1b[m\x1b[K(value_type&& __x)\n'}
+[5.982945] (shortest_path_viz) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.983019] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/stl_vector.h:1203:30:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[K<brace-enclosed initializer list>\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<Vector3D>::value_type&&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[KVector3D&&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.983102] (shortest_path_viz) StderrLine: {'line': b' 1203 |       push_back(\x1b[01;36m\x1b[Kvalue_type&& __x\x1b[m\x1b[K)\n'}
+[5.983184] (shortest_path_viz) StderrLine: {'line': b'      |                 \x1b[01;36m\x1b[K~~~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[6.066990] (-) TimerEvent: {}
+[6.167603] (-) TimerEvent: {}
+[6.268496] (-) TimerEvent: {}
+[6.369097] (-) TimerEvent: {}
+[6.470028] (-) TimerEvent: {}
+[6.570992] (-) TimerEvent: {}
+[6.672370] (-) TimerEvent: {}
+[6.773483] (-) TimerEvent: {}
+[6.874469] (-) TimerEvent: {}
+[6.975291] (-) TimerEvent: {}
+[7.076296] (-) TimerEvent: {}
+[7.177816] (-) TimerEvent: {}
+[7.278714] (-) TimerEvent: {}
+[7.379668] (-) TimerEvent: {}
+[7.480412] (-) TimerEvent: {}
+[7.581268] (-) TimerEvent: {}
+[7.682535] (-) TimerEvent: {}
+[7.783496] (-) TimerEvent: {}
+[7.884417] (-) TimerEvent: {}
+[7.985557] (-) TimerEvent: {}
+[8.086723] (-) TimerEvent: {}
+[8.187422] (-) TimerEvent: {}
+[8.288340] (-) TimerEvent: {}
+[8.389231] (-) TimerEvent: {}
+[8.489985] (-) TimerEvent: {}
+[8.590885] (-) TimerEvent: {}
+[8.692119] (-) TimerEvent: {}
+[8.793164] (-) TimerEvent: {}
+[8.894266] (-) TimerEvent: {}
+[8.996289] (-) TimerEvent: {}
+[9.098481] (-) TimerEvent: {}
+[9.200077] (-) TimerEvent: {}
+[9.261800] (shortest_path_viz) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/shortest_path_visualizer.dir/build.make:76: CMakeFiles/shortest_path_visualizer.dir/src/shortest_path_visualizer.cpp.o] Error 1\n'}
+[9.264415] (shortest_path_viz) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/shortest_path_visualizer.dir/all] Error 2\n'}
+[9.266166] (shortest_path_viz) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[9.276341] (shortest_path_viz) CommandEnded: {'returncode': 2}
+[9.300718] (-) TimerEvent: {}
+[9.383551] (shortest_path_viz) JobEnded: {'identifier': 'shortest_path_viz', 'rc': 2}
+[9.388449] (-) EventReactorShutdown: {}

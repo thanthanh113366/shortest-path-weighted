@@ -1,0 +1,20 @@
+[0.035s] Invoking command in '/home/hmt/shortest_path_weighted/build/shortest_path_viz': CMAKE_PREFIX_PATH=/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --build /home/hmt/shortest_path_weighted/build/shortest_path_viz -- -j8 -l8
+[0.225s] [35m[1mConsolidate compiler generated dependencies of target shortest_path_visualizer[0m
+[0.261s] [ 33%] [32mBuilding CXX object CMakeFiles/shortest_path_visualizer.dir/src/shortest_path_visualizer.cpp.o[0m
+[4.273s] [01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:[m[K In member function ‘[01m[Kvoid ShortestPathVisualizer::setup_polyhedron()[m[K’:
+[4.273s] [01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:63:20:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Polyhedron[m[K’ has no member named ‘[01m[KbuildApproximationGraph[m[K’
+[4.273s]    63 |         if (!poly_.[01;31m[KbuildApproximationGraph[m[K()) {
+[4.273s]       |                    [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[4.307s] [01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:[m[K In member function ‘[01m[Kvoid ShortestPathVisualizer::publish_approximation_graph()[m[K’:
+[4.307s] [01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:232:44:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Polyhedron[m[K’ has no member named ‘[01m[KgetGraphVertices[m[K’; did you mean ‘[01m[KgetVertices[m[K’?
+[4.307s]   232 |         const auto& graph_vertices = poly_.[01;31m[KgetGraphVertices[m[K();
+[4.307s]       |                                            [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[4.307s]       |                                            [32m[KgetVertices[m[K
+[4.307s] [01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:233:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Polyhedron[m[K’ has no member named ‘[01m[KgetGraphEdges[m[K’; did you mean ‘[01m[KgetHalfEdges[m[K’?
+[4.308s]   233 |         const auto& graph_edges = poly_.[01;31m[KgetGraphEdges[m[K();
+[4.308s]       |                                         [01;31m[K^~~~~~~~~~~~~[m[K
+[4.308s]       |                                         [32m[KgetHalfEdges[m[K
+[5.717s] gmake[2]: *** [CMakeFiles/shortest_path_visualizer.dir/build.make:76: CMakeFiles/shortest_path_visualizer.dir/src/shortest_path_visualizer.cpp.o] Error 1
+[5.717s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/shortest_path_visualizer.dir/all] Error 2
+[5.718s] gmake: *** [Makefile:146: all] Error 2
+[5.721s] Invoked command in '/home/hmt/shortest_path_weighted/build/shortest_path_viz' returned '2': CMAKE_PREFIX_PATH=/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --build /home/hmt/shortest_path_weighted/build/shortest_path_viz -- -j8 -l8

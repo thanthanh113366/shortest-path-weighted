@@ -1,0 +1,40 @@
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:[m[K In member function ‘[01m[Kstd::vector<Vector3D> ShortestPathVisualizer::getTriangleVertices(const HE_Face*)[m[K’:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:751:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst struct HE_Face[m[K’ has no member named ‘[01m[Kboundary[m[K’
+  751 |         HE_HalfEdge* he = face->[01;31m[Kboundary[m[K;
+      |                                 [01;31m[K^~~~~~~~[m[K
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:754:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct HE_Vertex[m[K’ has no member named ‘[01m[Kx[m[K’
+  754 |             vertices.push_back({he->origin->[01;31m[Kx[m[K, he->origin->y, he->origin->z});
+      |                                             [01;31m[K^[m[K
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:754:60:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct HE_Vertex[m[K’ has no member named ‘[01m[Ky[m[K’
+  754 |             vertices.push_back({he->origin->x, he->origin->[01;31m[Ky[m[K, he->origin->z});
+      |                                                            [01;31m[K^[m[K
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:754:75:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct HE_Vertex[m[K’ has no member named ‘[01m[Kz[m[K’
+  754 |             vertices.push_back({he->origin->x, he->origin->y, he->origin->[01;31m[Kz[m[K});
+      |                                                                           [01;31m[K^[m[K
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:754:31:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kstd::vector<Vector3D>::push_back(<brace-enclosed initializer list>)[m[K’
+  754 |             [01;31m[Kvertices.push_back({he->origin->x, he->origin->y, he->origin->z})[m[K;
+      |             [01;31m[K~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/vector:67[m[K,
+                 from [01m[K/usr/include/c++/11/functional:62[m[K,
+                 from [01m[K/usr/include/c++/11/pstl/glue_algorithm_defs.h:13[m[K,
+                 from [01m[K/usr/include/c++/11/algorithm:74[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/stl_vector.h:1187:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = Vector3D; _Alloc = std::allocator<Vector3D>; std::vector<_Tp, _Alloc>::value_type = Vector3D][m[K’
+ 1187 |       [01;36m[Kpush_back[m[K(const value_type& __x)
+      |       [01;36m[K^~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_vector.h:1187:35:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[K<brace-enclosed initializer list>[m[K’ to ‘[01m[Kconst value_type&[m[K’ {aka ‘[01m[Kconst Vector3D&[m[K’}
+ 1187 |       push_back([01;36m[Kconst value_type& __x[m[K)
+      |                 [01;36m[K~~~~~~~~~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_vector.h:1203:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid std::vector<_Tp, _Alloc>::push_back(std::vector<_Tp, _Alloc>::value_type&&) [with _Tp = Vector3D; _Alloc = std::allocator<Vector3D>; std::vector<_Tp, _Alloc>::value_type = Vector3D][m[K’
+ 1203 |       [01;36m[Kpush_back[m[K(value_type&& __x)
+      |       [01;36m[K^~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_vector.h:1203:30:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[K<brace-enclosed initializer list>[m[K’ to ‘[01m[Kstd::vector<Vector3D>::value_type&&[m[K’ {aka ‘[01m[KVector3D&&[m[K’}
+ 1203 |       push_back([01;36m[Kvalue_type&& __x[m[K)
+      |                 [01;36m[K~~~~~~~~~~~~~^~~[m[K
+gmake[2]: *** [CMakeFiles/shortest_path_visualizer.dir/build.make:76: CMakeFiles/shortest_path_visualizer.dir/src/shortest_path_visualizer.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/shortest_path_visualizer.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

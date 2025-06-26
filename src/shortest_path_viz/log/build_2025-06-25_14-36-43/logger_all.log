@@ -1,0 +1,106 @@
+[0.234s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'shortest_path_viz']
+[0.235s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['shortest_path_viz'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x769cd32487c0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x769cd3349660>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x769cd3349660>>, mixin_verb=('build',))
+[0.423s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.423s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.423s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.423s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.423s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.423s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.423s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/hmt/shortest_path_weighted/src/shortest_path_viz'
+[0.423s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.423s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.424s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.424s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.424s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.424s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.424s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.424s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.424s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.442s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_cmake' and name 'shortest_path_viz'
+[0.442s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.442s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.442s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.442s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.442s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.471s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.472s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.473s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/hmt/ros2_ws/install
+[0.474s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 276 installed packages in /opt/ros/humble
+[0.491s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.535s] Level 5:colcon.colcon_core.verb:set package 'shortest_path_viz' build argument 'cmake_args' from command line to 'None'
+[0.535s] Level 5:colcon.colcon_core.verb:set package 'shortest_path_viz' build argument 'cmake_target' from command line to 'None'
+[0.535s] Level 5:colcon.colcon_core.verb:set package 'shortest_path_viz' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.535s] Level 5:colcon.colcon_core.verb:set package 'shortest_path_viz' build argument 'cmake_clean_cache' from command line to 'False'
+[0.535s] Level 5:colcon.colcon_core.verb:set package 'shortest_path_viz' build argument 'cmake_clean_first' from command line to 'False'
+[0.535s] Level 5:colcon.colcon_core.verb:set package 'shortest_path_viz' build argument 'cmake_force_configure' from command line to 'False'
+[0.535s] Level 5:colcon.colcon_core.verb:set package 'shortest_path_viz' build argument 'ament_cmake_args' from command line to 'None'
+[0.535s] Level 5:colcon.colcon_core.verb:set package 'shortest_path_viz' build argument 'catkin_cmake_args' from command line to 'None'
+[0.535s] Level 5:colcon.colcon_core.verb:set package 'shortest_path_viz' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.535s] DEBUG:colcon.colcon_core.verb:Building package 'shortest_path_viz' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/hmt/shortest_path_weighted/src/shortest_path_viz/build/shortest_path_viz', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz', 'merge_install': False, 'path': '/home/hmt/shortest_path_weighted/src/shortest_path_viz', 'symlink_install': False, 'test_result_base': None}
+[0.535s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.537s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.537s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/hmt/shortest_path_weighted/src/shortest_path_viz' with build type 'ament_cmake'
+[0.537s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/hmt/shortest_path_weighted/src/shortest_path_viz'
+[0.541s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.541s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.541s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.564s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hmt/shortest_path_weighted/src/shortest_path_viz/build/shortest_path_viz': CMAKE_PREFIX_PATH=/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --build /home/hmt/shortest_path_weighted/src/shortest_path_viz/build/shortest_path_viz -- -j8 -l8
+[9.532s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hmt/shortest_path_weighted/src/shortest_path_viz/build/shortest_path_viz' returned '0': CMAKE_PREFIX_PATH=/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --build /home/hmt/shortest_path_weighted/src/shortest_path_viz/build/shortest_path_viz -- -j8 -l8
+[9.548s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hmt/shortest_path_weighted/src/shortest_path_viz/build/shortest_path_viz': CMAKE_PREFIX_PATH=/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --install /home/hmt/shortest_path_weighted/src/shortest_path_viz/build/shortest_path_viz
+[9.569s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(shortest_path_viz)
+[9.570s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hmt/shortest_path_weighted/src/shortest_path_viz/build/shortest_path_viz' returned '0': CMAKE_PREFIX_PATH=/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --install /home/hmt/shortest_path_weighted/src/shortest_path_viz/build/shortest_path_viz
+[9.572s] Level 1:colcon.colcon_core.environment:checking '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz' for CMake module files
+[9.573s] Level 1:colcon.colcon_core.environment:checking '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz' for CMake config files
+[9.573s] Level 1:colcon.colcon_core.shell:create_environment_hook('shortest_path_viz', 'cmake_prefix_path')
+[9.574s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/shortest_path_viz/hook/cmake_prefix_path.ps1'
+[9.577s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/shortest_path_viz/hook/cmake_prefix_path.dsv'
+[9.579s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/shortest_path_viz/hook/cmake_prefix_path.sh'
+[9.580s] Level 1:colcon.colcon_core.environment:checking '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/lib'
+[9.581s] Level 1:colcon.colcon_core.environment:checking '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/bin'
+[9.581s] Level 1:colcon.colcon_core.environment:checking '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/lib/pkgconfig/shortest_path_viz.pc'
+[9.581s] Level 1:colcon.colcon_core.environment:checking '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/lib/python3.10/site-packages'
+[9.581s] Level 1:colcon.colcon_core.environment:checking '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/bin'
+[9.582s] INFO:colcon.colcon_core.shell:Creating package script '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/shortest_path_viz/package.ps1'
+[9.582s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/shortest_path_viz/package.dsv'
+[9.583s] INFO:colcon.colcon_core.shell:Creating package script '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/shortest_path_viz/package.sh'
+[9.584s] INFO:colcon.colcon_core.shell:Creating package script '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/shortest_path_viz/package.bash'
+[9.585s] INFO:colcon.colcon_core.shell:Creating package script '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/shortest_path_viz/package.zsh'
+[9.585s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/colcon-core/packages/shortest_path_viz)
+[9.586s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(shortest_path_viz)
+[9.586s] Level 1:colcon.colcon_core.environment:checking '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz' for CMake module files
+[9.587s] Level 1:colcon.colcon_core.environment:checking '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz' for CMake config files
+[9.587s] Level 1:colcon.colcon_core.shell:create_environment_hook('shortest_path_viz', 'cmake_prefix_path')
+[9.588s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/shortest_path_viz/hook/cmake_prefix_path.ps1'
+[9.588s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/shortest_path_viz/hook/cmake_prefix_path.dsv'
+[9.589s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/shortest_path_viz/hook/cmake_prefix_path.sh'
+[9.589s] Level 1:colcon.colcon_core.environment:checking '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/lib'
+[9.589s] Level 1:colcon.colcon_core.environment:checking '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/bin'
+[9.589s] Level 1:colcon.colcon_core.environment:checking '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/lib/pkgconfig/shortest_path_viz.pc'
+[9.590s] Level 1:colcon.colcon_core.environment:checking '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/lib/python3.10/site-packages'
+[9.590s] Level 1:colcon.colcon_core.environment:checking '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/bin'
+[9.591s] INFO:colcon.colcon_core.shell:Creating package script '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/shortest_path_viz/package.ps1'
+[9.594s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/shortest_path_viz/package.dsv'
+[9.595s] INFO:colcon.colcon_core.shell:Creating package script '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/shortest_path_viz/package.sh'
+[9.596s] INFO:colcon.colcon_core.shell:Creating package script '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/shortest_path_viz/package.bash'
+[9.597s] INFO:colcon.colcon_core.shell:Creating package script '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/shortest_path_viz/package.zsh'
+[9.597s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/shortest_path_viz/share/colcon-core/packages/shortest_path_viz)
+[9.598s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[9.598s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[9.599s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[9.599s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[9.661s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[9.661s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[9.661s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[9.661s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[9.661s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.FileNotFound: Failed to connect to socket /run/user/1000/bus: No such file or directory
+[9.662s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[9.662s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/local_setup.ps1'
+[9.663s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/_local_setup_util_ps1.py'
+[9.665s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/setup.ps1'
+[9.667s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/local_setup.sh'
+[9.668s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/_local_setup_util_sh.py'
+[9.669s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/setup.sh'
+[9.670s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/local_setup.bash'
+[9.671s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/setup.bash'
+[9.677s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/local_setup.zsh'
+[9.678s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hmt/shortest_path_weighted/src/shortest_path_viz/install/setup.zsh'

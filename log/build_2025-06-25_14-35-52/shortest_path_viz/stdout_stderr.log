@@ -1,0 +1,30 @@
+[35m[1mConsolidate compiler generated dependencies of target shortest_path_visualizer[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/shortest_path_visualizer.dir/src/shortest_path_visualizer.cpp.o[0m
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:[m[K In member function ‘[01m[Kvoid ShortestPathVisualizer::setup_polyhedron()[m[K’:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:82:44:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KVector3D::Vector3D(double, double, double)[m[K’
+   82 |         Vector3D source_point(0.5, 0.5, 0.5[01;31m[K)[m[K;
+      |                                            [01;31m[K^[m[K
+In file included from [01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:6[m[K:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.h:36:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Vector3D::Vector3D()[m[K’
+   36 | struct [01;36m[KVector3D[m[K {
+      |        [01;36m[K^~~~~~~~[m[K
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.h:36:8:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 3 provided
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.h:36:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Vector3D::Vector3D(const Vector3D&)[m[K’
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.h:36:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 3 provided
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.h:36:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Vector3D::Vector3D(Vector3D&&)[m[K’
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.h:36:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 3 provided
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:83:44:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KVector3D::Vector3D(double, double, double)[m[K’
+   83 |         Vector3D target_point(1.2, 1.2, 2.5[01;31m[K)[m[K;
+      |                                            [01;31m[K^[m[K
+In file included from [01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:6[m[K:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.h:36:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Vector3D::Vector3D()[m[K’
+   36 | struct [01;36m[KVector3D[m[K {
+      |        [01;36m[K^~~~~~~~[m[K
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.h:36:8:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 3 provided
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.h:36:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Vector3D::Vector3D(const Vector3D&)[m[K’
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.h:36:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 3 provided
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.h:36:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Vector3D::Vector3D(Vector3D&&)[m[K’
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.h:36:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 3 provided
+gmake[2]: *** [CMakeFiles/shortest_path_visualizer.dir/build.make:76: CMakeFiles/shortest_path_visualizer.dir/src/shortest_path_visualizer.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/shortest_path_visualizer.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

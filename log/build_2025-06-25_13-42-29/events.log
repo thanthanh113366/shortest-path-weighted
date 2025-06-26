@@ -1,0 +1,84 @@
+[0.000000] (-) TimerEvent: {}
+[0.001045] (shortest_path_viz) JobQueued: {'identifier': 'shortest_path_viz', 'dependencies': OrderedDict()}
+[0.001116] (shortest_path_viz) JobStarted: {'identifier': 'shortest_path_viz'}
+[0.020545] (shortest_path_viz) JobProgress: {'identifier': 'shortest_path_viz', 'progress': 'cmake'}
+[0.022532] (shortest_path_viz) JobProgress: {'identifier': 'shortest_path_viz', 'progress': 'build'}
+[0.025638] (shortest_path_viz) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/hmt/shortest_path_weighted/build/shortest_path_viz', '--', '-j8', '-l8'], 'cwd': '/home/hmt/shortest_path_weighted/build/shortest_path_viz', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'hmt'), ('ROS_PACKAGE_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/share'), ('GIT_ASKPASS', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/hmt'), ('OLDPWD', '/home/hmt/shortest_path_weighted'), ('DISABLE_AUTO_UPDATE', 'true'), ('TERM_PROGRAM_VERSION', '1.1.5'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-e8ec1e32-4e58-4de7-bd71-c3d0bfda9c12.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90/node'), ('npm_config_yes', 'true'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/hmt/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'hmt'), ('NAME', 'DESKTOP-2H1UG1S'), ('WSL_INTEROP', '/run/WSL/12754_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/hmt/ros2_ws/install/distance_warning_interfaces/lib/x86_64-linux-gnu/pkgconfig:/home/hmt/ros2_ws/install/distance_warning_interfaces/lib/pkgconfig'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '1'), ('COMPOSER_NO_INTERACTION', '1'), ('PATH', '/home/hmt/.cursor-server/bin/ef5eeb47a684b4c217dfaf0463aa7ea952f8ab90/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files (x86)/Microsoft SQL Server/160/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/160/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/160/DTS/Binn/:/mnt/f/Program Files/nodejs/:/mnt/f/Program Files/Git/cmd:/mnt/c/Users/hmt/AppData/Local/pnpm:/mnt/f/Program Files/Scripts/:/mnt/f/Program Files/:/mnt/c/Users/hmt/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/hmt/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/hmt/AppData/Roaming/npm:/mnt/f/Program Files/cursor/resources/app/bin:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000/'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-7ccb8378d7.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/hmt/shortest_path_weighted/build/shortest_path_viz'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/hmt/ros2_ws/install/distance_warning/lib/python3.10/site-packages:/home/hmt/ros2_ws/install/distance_warning_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('PIP_NO_INPUT', 'true'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/hmt/ros2_ws/install/distance_warning:/opt/ros/humble:/home/hmt/ros2_ws/install/distance_warning_interfaces'), ('WSLENV', '')]), 'shell': False}
+[0.099541] (-) TimerEvent: {}
+[0.199942] (-) TimerEvent: {}
+[0.225493] (shortest_path_viz) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target shortest_path_visualizer\x1b[0m\n'}
+[0.261913] (shortest_path_viz) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/shortest_path_visualizer.dir/src/shortest_path_visualizer.cpp.o\x1b[0m\n'}
+[0.300189] (-) TimerEvent: {}
+[0.401747] (-) TimerEvent: {}
+[0.502411] (-) TimerEvent: {}
+[0.602860] (-) TimerEvent: {}
+[0.703280] (-) TimerEvent: {}
+[0.803720] (-) TimerEvent: {}
+[0.904524] (-) TimerEvent: {}
+[1.005621] (-) TimerEvent: {}
+[1.106145] (-) TimerEvent: {}
+[1.206634] (-) TimerEvent: {}
+[1.307101] (-) TimerEvent: {}
+[1.407553] (-) TimerEvent: {}
+[1.508211] (-) TimerEvent: {}
+[1.609191] (-) TimerEvent: {}
+[1.709646] (-) TimerEvent: {}
+[1.810084] (-) TimerEvent: {}
+[1.910562] (-) TimerEvent: {}
+[2.011290] (-) TimerEvent: {}
+[2.112419] (-) TimerEvent: {}
+[2.213912] (-) TimerEvent: {}
+[2.314361] (-) TimerEvent: {}
+[2.414774] (-) TimerEvent: {}
+[2.515503] (-) TimerEvent: {}
+[2.616846] (-) TimerEvent: {}
+[2.717357] (-) TimerEvent: {}
+[2.817860] (-) TimerEvent: {}
+[2.918568] (-) TimerEvent: {}
+[3.019836] (-) TimerEvent: {}
+[3.120225] (-) TimerEvent: {}
+[3.220682] (-) TimerEvent: {}
+[3.321521] (-) TimerEvent: {}
+[3.422009] (-) TimerEvent: {}
+[3.522487] (-) TimerEvent: {}
+[3.623187] (-) TimerEvent: {}
+[3.723863] (-) TimerEvent: {}
+[3.824355] (-) TimerEvent: {}
+[3.924735] (-) TimerEvent: {}
+[4.025798] (-) TimerEvent: {}
+[4.127515] (-) TimerEvent: {}
+[4.227882] (-) TimerEvent: {}
+[4.273568] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid ShortestPathVisualizer::setup_polyhedron()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.273869] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:63:20:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclass Polyhedron\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[KbuildApproximationGraph\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.273956] (shortest_path_viz) StderrLine: {'line': b'   63 |         if (!poly_.\x1b[01;31m\x1b[KbuildApproximationGraph\x1b[m\x1b[K()) {\n'}
+[4.274009] (shortest_path_viz) StderrLine: {'line': b'      |                    \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.308079] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid ShortestPathVisualizer::publish_approximation_graph()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.308366] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:232:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclass Polyhedron\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[KgetGraphVertices\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[KgetVertices\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.308434] (shortest_path_viz) StderrLine: {'line': b'  232 |         const auto& graph_vertices = poly_.\x1b[01;31m\x1b[KgetGraphVertices\x1b[m\x1b[K();\n'}
+[4.308483] (shortest_path_viz) StderrLine: {'line': b'      |                                            \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.308530] (shortest_path_viz) StderrLine: {'line': b'      |                                            \x1b[32m\x1b[KgetVertices\x1b[m\x1b[K\n'}
+[4.308574] (shortest_path_viz) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/shortest_path_visualizer.cpp:233:41:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclass Polyhedron\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[KgetGraphEdges\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[KgetHalfEdges\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.308621] (shortest_path_viz) StderrLine: {'line': b'  233 |         const auto& graph_edges = poly_.\x1b[01;31m\x1b[KgetGraphEdges\x1b[m\x1b[K();\n'}
+[4.308668] (shortest_path_viz) StderrLine: {'line': b'      |                                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.308712] (shortest_path_viz) StderrLine: {'line': b'      |                                         \x1b[32m\x1b[KgetHalfEdges\x1b[m\x1b[K\n'}
+[4.328077] (-) TimerEvent: {}
+[4.428662] (-) TimerEvent: {}
+[4.529117] (-) TimerEvent: {}
+[4.629772] (-) TimerEvent: {}
+[4.730523] (-) TimerEvent: {}
+[4.832245] (-) TimerEvent: {}
+[4.932687] (-) TimerEvent: {}
+[5.033070] (-) TimerEvent: {}
+[5.133548] (-) TimerEvent: {}
+[5.234010] (-) TimerEvent: {}
+[5.334507] (-) TimerEvent: {}
+[5.435073] (-) TimerEvent: {}
+[5.535833] (-) TimerEvent: {}
+[5.636413] (-) TimerEvent: {}
+[5.718205] (shortest_path_viz) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/shortest_path_visualizer.dir/build.make:76: CMakeFiles/shortest_path_visualizer.dir/src/shortest_path_visualizer.cpp.o] Error 1\n'}
+[5.718552] (shortest_path_viz) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/shortest_path_visualizer.dir/all] Error 2\n'}
+[5.718831] (shortest_path_viz) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[5.721977] (shortest_path_viz) CommandEnded: {'returncode': 2}
+[5.736516] (-) TimerEvent: {}
+[5.763946] (shortest_path_viz) JobEnded: {'identifier': 'shortest_path_viz', 'rc': 2}
+[5.778131] (-) EventReactorShutdown: {}

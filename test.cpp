@@ -1,6 +1,8 @@
 #include "ShortestPathLib.h"
 #include <iostream>
 #include <map>
+#include <algorithm>
+#include <iomanip>
 
 void printVertexNeighbors(const HE_Vertex* vertex) {
     if (!vertex) {
@@ -83,17 +85,115 @@ int main() {
     std::cout << "Reduction: " << (original_count - merged_count) << " points (" 
               << (100.0 * (original_count - merged_count) / original_count) << "%)" << std::endl;
 
-    std::cout << "\n--- Shortest Path Algorithm Test ---" << std::endl;
+    std::cout << "\n--- Task 3.1 & 3.2: Approximation Graph Construction ---" << std::endl;
+    if (poly.buildApproximationGraph()) {
+        std::cout << "Approximation graph built successfully!" << std::endl;
+        
+        // Show detailed statistics
+        const auto& graph_vertices = poly.getGraphVertices();
+        const auto& graph_edges = poly.getGraphEdges();
+        
+        std::cout << "\nDetailed breakdown:" << std::endl;
+        std::cout << "  - Original vertices in graph: " 
+                  << std::count_if(graph_vertices.begin(), graph_vertices.end(),
+                                   [](const GraphVertex& gv) { return gv.is_original_vertex; })
+                  << std::endl;
+        std::cout << "  - Steiner points in graph: " 
+                  << std::count_if(graph_vertices.begin(), graph_vertices.end(),
+                                   [](const GraphVertex& gv) { return !gv.is_original_vertex; })
+                  << std::endl;
+        
+        if (!graph_edges.empty()) {
+            std::cout << "  - Sample edge weights: ";
+            for (int i = 0; i < std::min(5, (int)graph_edges.size()); ++i) {
+                std::cout << std::fixed << std::setprecision(3) << graph_edges[i].weight << " ";
+            }
+            std::cout << "..." << std::endl;
+        }
+    } else {
+        std::cout << "Failed to build approximation graph." << std::endl;
+    }
+
+    std::cout << "\n--- Task 5: Pruned Graph (G*) Construction Test ---" << std::endl;
+    
+    // Test Task 5: Build pruned approximation graph
+    if (poly.buildPrunedApproximationGraph()) {
+        std::cout << "Pruned approximation graph G* built successfully!" << std::endl;
+        
+        const auto& pruned_vertices = poly.getGraphVertices();
+        const auto& pruned_edges = poly.getGraphEdges();
+        
+        std::cout << "\nPruned graph statistics:" << std::endl;
+        std::cout << "  - Vertices in G*: " << pruned_vertices.size() << std::endl;
+        std::cout << "  - Edges in G*: " << pruned_edges.size() << std::endl;
+    } else {
+        std::cout << "Failed to build pruned approximation graph." << std::endl;
+    }
+
+    std::cout << "\n--- Shortest Path Algorithm Comparison Test ---" << std::endl;
+    
+    // Test both versions: vertex-to-vertex and arbitrary surface points
+    
+    // Version 1: Original vertex-to-vertex with standard Dijkstra
+    std::cout << "\n=== Version 1: Standard Dijkstra (Vertex-to-Vertex) ===" << std::endl;
     int start_id = 0;
-    int end_id = 6;
-    ShortestPathResult result = poly.findApproximateShortestPath(start_id, end_id, epsilon);
+    int end_id = 5;
+    ShortestPathResult result1 = poly.findApproximateShortestPath(start_id, end_id, epsilon);
+    
+    // Version 2: Paper-compliant arbitrary surface points
+    std::cout << "\n=== Version 2: Paper-Compliant Surface Points ===" << std::endl;
+    // Let's use vertices from opposite sides to force multi-face path
+    // V0 = (0, 1, 1.618) and V2 = (0, 0.618, -1.618) - opposite poles!
+    Vector3D source_point = {0.000000, 1.000000, 1.618000};  // Near V0
+    Vector3D target_point = {0.000000, 0.618000, -1.618000}; // Near V2
+    ShortestPathResult result2 = poly.findApproximateShortestPath(source_point, target_point, epsilon);
+    
+    // Report results
+    ShortestPathResult result = result2.path_found ? result2 : result1; // Prefer surface point result
 
     if (result.path_found) {
         std::cout << "Path found!" << std::endl;
         std::cout << "  - Weighted Cost: " << result.weighted_cost << std::endl;
         std::cout << "  - Number of points in path: " << result.path.size() << std::endl;
     } else {
-        std::cout << "Path not found (or algorithm not yet implemented)." << std::endl;
+        std::cout << "Path not found (Dijkstra algorithm pending - Task 4)." << std::endl;
+    }
+    
+    std::cout << "\n--- Performance Comparison ---" << std::endl;
+    std::cout << "Testing both dense (G) and sparse (G*) graphs:" << std::endl;
+    
+    // Build dense graph for comparison
+    std::cout << "\nBuilding dense graph G for comparison..." << std::endl;
+    poly.buildApproximationGraph(); // Dense version
+    
+    // Test dense graph performance
+    std::cout << "\nTesting dense graph performance:" << std::endl;
+    auto dense_result = poly.findApproximateShortestPath(start_id, end_id, epsilon);
+    
+    // Build sparse graph
+    std::cout << "\nBuilding sparse graph G* for comparison..." << std::endl;
+    poly.buildPrunedApproximationGraph(); // Sparse version
+    
+    // Test sparse graph performance
+    std::cout << "\nTesting sparse graph performance:" << std::endl;
+    auto sparse_result = poly.findApproximateShortestPath(start_id, end_id, epsilon);
+    
+    // Compare results
+    std::cout << "\n--- Performance Summary ---" << std::endl;
+    if (dense_result.path_found && sparse_result.path_found) {
+        std::cout << "Dense graph (G)  - Cost: " << std::fixed << std::setprecision(6) 
+                  << dense_result.weighted_cost << ", Path length: " << dense_result.path.size() << std::endl;
+        std::cout << "Sparse graph (G*) - Cost: " << std::fixed << std::setprecision(6) 
+                  << sparse_result.weighted_cost << ", Path length: " << sparse_result.path.size() << std::endl;
+        
+        double cost_ratio = sparse_result.weighted_cost / dense_result.weighted_cost;
+        std::cout << "Cost ratio (G*/G): " << std::fixed << std::setprecision(3) << cost_ratio << std::endl;
+        
+        if (cost_ratio <= 1.1) { // Within 10% is excellent for sparse approximation
+            std::cout << "✓ Sparse graph maintains good approximation quality!" << std::endl;
+        } else {
+            std::cout << "⚠ Sparse graph has higher cost (expected due to pruning)" << std::endl;
+        }
     }
 
     std::cout << "\n--- Test Finished Successfully ---" << std::endl;
