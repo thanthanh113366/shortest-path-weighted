@@ -326,7 +326,7 @@ double Polyhedron::computeVertexHeight(const HE_Vertex* vertex) {
 // Geometric parameter computation (h_v, theta_v, r_v, delta)
 
 bool Polyhedron::computeGeometricParameters(double epsilon) {
-    std::cout << "\n=== Task 2.1: Computing Geometric Parameters ===" << std::endl;
+    // Computing geometric parameters
     
     if (epsilon <= 0.0 || epsilon >= 0.5) {
         std::cerr << "Error: Epsilon must be in range (0, 0.5). Got: " << epsilon << std::endl;
@@ -337,7 +337,7 @@ bool Polyhedron::computeGeometricParameters(double epsilon) {
     vertex_params_.clear();
     vertex_params_.resize(vertices_.size());
     
-    std::cout << "Computing parameters for " << vertices_.size() << " vertices..." << std::endl;
+    // Processing vertices
     
     for (size_t i = 0; i < vertices_.size(); ++i) {
         const HE_Vertex* vertex = vertices_[i].get();
@@ -474,7 +474,7 @@ const VertexGeometricParams& Polyhedron::getVertexGeometricParams(int vertexID) 
 // Steiner point placement using geometric progression
 
 bool Polyhedron::placeSteinerPoints() {
-    std::cout << "\n=== Task 2.2: Placing Steiner Points ===" << std::endl;
+    // Placing Steiner points
     
     if (vertex_params_.empty()) {
         std::cerr << "Error: Geometric parameters not computed. Call computeGeometricParameters() first." << std::endl;
@@ -484,8 +484,6 @@ bool Polyhedron::placeSteinerPoints() {
     // Clear previous Steiner points
     steiner_points_.clear();
     next_steiner_id_ = 0;
-    
-    std::cout << "Placing Steiner points on all edges using geometric progression..." << std::endl;
     
     // For each edge, place Steiner points from both endpoints
     std::set<std::pair<int, int>> processed_edges; // To avoid duplicate processing
@@ -512,7 +510,7 @@ bool Polyhedron::placeSteinerPoints() {
         }
     }
     
-    std::cout << "Placed " << steiner_points_.size() << " Steiner points total." << std::endl;
+    // Steiner points placed
     
     return true;
 }
@@ -561,16 +559,7 @@ void Polyhedron::placeSteinerPointsOnEdge(HE_HalfEdge* edge, int source_vertex_i
         steiner_points_.push_back(point);
     }
     
-    // Debug output for this edge (limit verbose output)
-    if (!edge_points.empty() && edge_points.size() <= 10) {
-        std::cout << "  Edge from vertex " << source_vertex_id 
-                  << " (length=" << std::fixed << std::setprecision(3) << edge_length 
-                  << ", r_v=" << params.r_v << ", δ=" << params.delta
-                  << "): " << edge_points.size() << " points" << std::endl;
-    } else if (edge_points.size() > 10) {
-        std::cout << "  Edge from vertex " << source_vertex_id 
-                  << ": " << edge_points.size() << " points (many)" << std::endl;
-    }
+    // Points placed on edge
 }
 
 Vector3D Polyhedron::interpolateOnEdge(HE_HalfEdge* edge, double distance_from_start) {
@@ -644,7 +633,7 @@ const std::vector<SteinerPoint>& Polyhedron::getSteinerPoints() const {
 // Steiner point merging using paper's interval-size algorithm (Task 2.3)
 
 bool Polyhedron::mergeSteinerPoints() {
-    std::cout << "\n=== Task 2.3: Merging Steiner Points (Paper Algorithm) ===" << std::endl;
+    // Merging Steiner points
     
     if (steiner_points_.empty()) {
         std::cerr << "Error: No Steiner points to merge. Call placeSteinerPoints() first." << std::endl;
@@ -652,7 +641,6 @@ bool Polyhedron::mergeSteinerPoints() {
     }
     
     size_t initial_count = steiner_points_.size();
-    std::cout << "Initial Steiner points: " << initial_count << std::endl;
     
     // Get all unique edges
     std::set<std::pair<int, int>> unique_edges;
@@ -666,7 +654,7 @@ bool Polyhedron::mergeSteinerPoints() {
         unique_edges.insert(edge_key);
     }
     
-    std::cout << "Applying paper algorithm on " << unique_edges.size() << " unique edges..." << std::endl;
+    // Processing edges
     
     // Apply paper's interval-based merging on each edge
     for (const auto& edge_key : unique_edges) {
@@ -1041,7 +1029,7 @@ ShortestPathResult Polyhedron::runDijkstra(int start_graph_id, int end_graph_id)
 }
 
 bool Polyhedron::buildApproximationGraph() {
-    std::cout << "\n=== Building Complete Approximation Graph G ===\n" << std::endl;
+    // Building approximation graph
     
     // Task 3.1: Construct vertices
     if (!constructApproximationGraphVertices()) {
@@ -1509,43 +1497,317 @@ int Polyhedron::createGraphEdge(int vertex1_id, int vertex2_id, const HE_Face* f
     return 1; // Successfully created 1 edge
 }
 
-// Placeholder for path finding with positions
+// ===============================================================
+// === Temporary Vertex Insertion for Arbitrary Surface Points ===
+// ===============================================================
+
 ShortestPathResult Polyhedron::findApproximateShortestPath(const Vector3D& start_pos, const Vector3D& end_pos, double epsilon) {
     ShortestPathResult result;
     
-    std::cout << "\n=== Finding Approximate Shortest Path (Position-based) ===\n" << std::endl;
+    std::cout << "\n=== Paper-Compliant Temporary Vertex Insertion Method ===\n" << std::endl;
     std::cout << "Start position: (" << start_pos.x << ", " << start_pos.y << ", " << start_pos.z << ")" << std::endl;
     std::cout << "End position: (" << end_pos.x << ", " << end_pos.y << ", " << end_pos.z << ")" << std::endl;
     std::cout << "Epsilon: " << epsilon << std::endl;
     
-    // Find closest vertices to start and end positions
-    int start_vertex_id = -1, end_vertex_id = -1;
-    double min_start_dist = std::numeric_limits<double>::infinity();
-    double min_end_dist = std::numeric_limits<double>::infinity();
-    
-    for (const auto& vertex : vertices_) {
-        double start_dist = distance(vertex->pos, start_pos);
-        double end_dist = distance(vertex->pos, end_pos);
-        
-        if (start_dist < min_start_dist) {
-            min_start_dist = start_dist;
-            start_vertex_id = vertex->id;
-        }
-        
-        if (end_dist < min_end_dist) {
-            min_end_dist = end_dist;
-            end_vertex_id = vertex->id;
+    // Build approximation graph if not already done
+    if (graph_vertices_.empty() || graph_edges_.empty()) {
+        std::cout << "Building approximation graph first..." << std::endl;
+        if (!buildApproximationGraph()) {
+            std::cout << "Failed to build approximation graph." << std::endl;
+            return result;
         }
     }
     
-    if (start_vertex_id == -1 || end_vertex_id == -1) {
-        std::cerr << "Error: Could not find closest vertices" << std::endl;
+    // Step 1: Find containing faces for start and end positions
+    const HE_Face* start_face = findContainingFace(start_pos);
+    const HE_Face* end_face = findContainingFace(end_pos);
+    
+    if (!start_face || !end_face) {
+        std::cout << "Error: Could not locate faces containing the surface points" << std::endl;
         return result;
     }
     
-    std::cout << "Closest start vertex: " << start_vertex_id << " (distance: " << min_start_dist << ")" << std::endl;
-    std::cout << "Closest end vertex: " << end_vertex_id << " (distance: " << min_end_dist << ")" << std::endl;
+    std::cout << "Start point is on face " << start_face->id << std::endl;
+    std::cout << "End point is on face " << end_face->id << std::endl;
     
-    // Use the existing method
-    return findApproximateShortestPath(start_vertex_id, end_vertex_id, epsilon);
+    // Step 2: Add temporary vertices to approximation graph
+    std::vector<int> temporary_vertex_ids;
+    
+    int start_temp_id = addTemporaryGraphVertex(start_pos, start_face);
+    int end_temp_id = addTemporaryGraphVertex(end_pos, end_face);
+    
+    if (start_temp_id == -1 || end_temp_id == -1) {
+        std::cout << "Error: Failed to add temporary vertices to graph" << std::endl;
+        return result;
+    }
+    
+    temporary_vertex_ids.push_back(start_temp_id);
+    temporary_vertex_ids.push_back(end_temp_id);
+    
+    std::cout << "Added temporary vertices: start=" << start_temp_id << ", end=" << end_temp_id << std::endl;
+    
+    // Step 3: Connect temporary vertices to nearby points on their faces
+    connectTemporaryVertex(start_temp_id, start_face);
+    connectTemporaryVertex(end_temp_id, end_face);
+    
+    std::cout << "Connected temporary vertices to face neighborhoods" << std::endl;
+    
+    // Step 4: Run Dijkstra on the augmented graph
+    result = runDijkstra(start_temp_id, end_temp_id);
+    
+    // Step 5: Clean up temporary vertices
+    removeTemporaryVertices(temporary_vertex_ids);
+    
+    std::cout << "Cleaned up temporary vertices" << std::endl;
+    
+    if (result.path_found) {
+        std::cout << "=== Temporary Vertex Method Results ===" << std::endl;
+        std::cout << "Path found: YES" << std::endl;
+        std::cout << "Weighted cost: " << std::fixed << std::setprecision(6) << result.weighted_cost << std::endl;
+        std::cout << "Path length: " << result.path.size() << " points" << std::endl;
+    } else {
+        std::cout << "No path found using temporary vertex method" << std::endl;
+    }
+    
+    return result;
+}
+
+const HE_Face* Polyhedron::findContainingFace(const Vector3D& point) {
+    double min_distance = std::numeric_limits<double>::infinity();
+    const HE_Face* closest_face = nullptr;
+    
+    // Check all faces to find the one that contains the point
+    for (const auto& face : faces_) {
+        if (!face || !face->edge) continue;
+        
+        // Get triangle vertices
+        std::vector<Vector3D> vertices = getTriangleVertices(face.get());
+        if (vertices.size() != 3) continue;
+        
+        // Check if point is inside triangle using barycentric coordinates
+        Vector3D barycentric = computeBarycentric(point, vertices[0], vertices[1], vertices[2]);
+        
+        // If all barycentric coordinates are non-negative, point is inside triangle
+        if (barycentric.x >= -1e-6 && barycentric.y >= -1e-6 && barycentric.z >= -1e-6) {
+            return face.get(); // Found containing face
+        }
+        
+        // Otherwise, compute distance to triangle for closest face fallback
+        Vector3D projected = projectPointToTriangle(point, vertices[0], vertices[1], vertices[2]);
+        double dist = distance(point, projected);
+        
+        if (dist < min_distance) {
+            min_distance = dist;
+            closest_face = face.get();
+        }
+    }
+    
+    // Return closest face if no exact containing face found
+    return closest_face;
+}
+
+std::vector<Vector3D> Polyhedron::getTriangleVertices(const HE_Face* face) {
+    std::vector<Vector3D> vertices;
+    if (!face || !face->edge) return vertices;
+    
+    HE_HalfEdge* he = face->edge;
+    for (int i = 0; i < 3; ++i) {
+        if (!he || !he->origin) break;
+        vertices.push_back(he->origin->pos);
+        he = he->next;
+    }
+    
+    return vertices;
+}
+
+Vector3D Polyhedron::computeBarycentric(const Vector3D& p, const Vector3D& v0, const Vector3D& v1, const Vector3D& v2) {
+    Vector3D v0v1 = {v1.x - v0.x, v1.y - v0.y, v1.z - v0.z};
+    Vector3D v0v2 = {v2.x - v0.x, v2.y - v0.y, v2.z - v0.z};
+    Vector3D v0p = {p.x - v0.x, p.y - v0.y, p.z - v0.z};
+    
+    double dot00 = v0v2.x * v0v2.x + v0v2.y * v0v2.y + v0v2.z * v0v2.z;
+    double dot01 = v0v2.x * v0v1.x + v0v2.y * v0v1.y + v0v2.z * v0v1.z;
+    double dot02 = v0v2.x * v0p.x + v0v2.y * v0p.y + v0v2.z * v0p.z;
+    double dot11 = v0v1.x * v0v1.x + v0v1.y * v0v1.y + v0v1.z * v0v1.z;
+    double dot12 = v0v1.x * v0p.x + v0v1.y * v0p.y + v0v1.z * v0p.z;
+    
+    double inv_denom = 1.0 / (dot00 * dot11 - dot01 * dot01);
+    double u = (dot11 * dot02 - dot01 * dot12) * inv_denom;
+    double v = (dot00 * dot12 - dot01 * dot02) * inv_denom;
+    
+    return {1.0 - u - v, v, u}; // barycentric coordinates (w0, w1, w2)
+}
+
+Vector3D Polyhedron::projectPointToTriangle(const Vector3D& point, const Vector3D& v0, const Vector3D& v1, const Vector3D& v2) {
+    // Compute triangle normal
+    Vector3D edge1 = {v1.x - v0.x, v1.y - v0.y, v1.z - v0.z};
+    Vector3D edge2 = {v2.x - v0.x, v2.y - v0.y, v2.z - v0.z};
+    Vector3D normal = {
+        edge1.y * edge2.z - edge1.z * edge2.y,
+        edge1.z * edge2.x - edge1.x * edge2.z,
+        edge1.x * edge2.y - edge1.y * edge2.x
+    };
+    
+    // Normalize normal
+    double normal_length = std::sqrt(normal.x * normal.x + normal.y * normal.y + normal.z * normal.z);
+    if (normal_length > 1e-10) {
+        normal.x /= normal_length;
+        normal.y /= normal_length;
+        normal.z /= normal_length;
+    }
+    
+    // Project point to plane
+    Vector3D v0_to_point = {point.x - v0.x, point.y - v0.y, point.z - v0.z};
+    double dist_to_plane = v0_to_point.x * normal.x + v0_to_point.y * normal.y + v0_to_point.z * normal.z;
+    Vector3D plane_point = {
+        point.x - normal.x * dist_to_plane,
+        point.y - normal.y * dist_to_plane,
+        point.z - normal.z * dist_to_plane
+    };
+    
+    // Check if projection is inside triangle
+    Vector3D barycentric = computeBarycentric(plane_point, v0, v1, v2);
+    
+    if (barycentric.x >= 0.0 && barycentric.y >= 0.0 && barycentric.z >= 0.0) {
+        return plane_point; // Inside triangle
+    }
+    
+    // Project to closest edge/vertex
+    std::vector<Vector3D> edge_projections = {
+        projectPointToLineSegment(point, v0, v1),
+        projectPointToLineSegment(point, v1, v2),
+        projectPointToLineSegment(point, v2, v0)
+    };
+    
+    double min_dist = std::numeric_limits<double>::infinity();
+    Vector3D closest = plane_point;
+    
+    for (const auto& proj : edge_projections) {
+        double d = distance(point, proj);
+        if (d < min_dist) {
+            min_dist = d;
+            closest = proj;
+        }
+    }
+    
+    return closest;
+}
+
+Vector3D Polyhedron::projectPointToLineSegment(const Vector3D& point, const Vector3D& a, const Vector3D& b) {
+    Vector3D ab = {b.x - a.x, b.y - a.y, b.z - a.z};
+    Vector3D ap = {point.x - a.x, point.y - a.y, point.z - a.z};
+    double ab_len_sq = ab.x * ab.x + ab.y * ab.y + ab.z * ab.z;
+    
+    if (ab_len_sq < 1e-10) return a; // Degenerate case
+    
+    double t = (ap.x * ab.x + ap.y * ab.y + ap.z * ab.z) / ab_len_sq;
+    t = std::max(0.0, std::min(1.0, t)); // Clamp to [0,1]
+    
+    return {a.x + t * ab.x, a.y + t * ab.y, a.z + t * ab.z};
+}
+
+int Polyhedron::addTemporaryGraphVertex(const Vector3D& surface_point, const HE_Face* containing_face) {
+    if (!containing_face) return -1;
+    
+    // Create temporary graph vertex
+    GraphVertex temp_vertex;
+    temp_vertex.id = next_graph_vertex_id_++;
+    temp_vertex.pos = surface_point;
+    temp_vertex.is_original_vertex = false;
+    temp_vertex.original_vertex_id = -1;
+    temp_vertex.steiner_point_id = -1; // Special marker for temporary vertices
+    
+    graph_vertices_.push_back(temp_vertex);
+    
+    std::cout << "Added temporary vertex " << temp_vertex.id << " at (" 
+              << surface_point.x << ", " << surface_point.y << ", " << surface_point.z 
+              << ") on face " << containing_face->id << std::endl;
+    
+    return temp_vertex.id;
+}
+
+void Polyhedron::connectTemporaryVertex(int temp_vertex_id, const HE_Face* containing_face) {
+    if (!containing_face) return;
+    
+    // Find the temporary vertex
+    Vector3D temp_pos;
+    bool found_temp = false;
+    for (const auto& gv : graph_vertices_) {
+        if (gv.id == temp_vertex_id) {
+            temp_pos = gv.pos;
+            found_temp = true;
+            break;
+        }
+    }
+    
+    if (!found_temp) return;
+    
+    // Get all points on this face (original vertices + Steiner points)
+    std::vector<int> face_points = getAllPointsOnFace(containing_face);
+    
+    int connections_made = 0;
+    
+    // Connect to all points on the same face
+    for (int face_point_id : face_points) {
+        // Find position of this face point
+        Vector3D face_point_pos;
+        bool found_face_point = false;
+        
+        for (const auto& gv : graph_vertices_) {
+            if (gv.id == face_point_id) {
+                face_point_pos = gv.pos;
+                found_face_point = true;
+                break;
+            }
+        }
+        
+        if (!found_face_point) continue;
+        
+        // Calculate edge weight
+        double euclidean_distance = distance(temp_pos, face_point_pos);
+        if (euclidean_distance < 1e-10) continue; // Skip degenerate edges
+        
+        double edge_weight = euclidean_distance * containing_face->weight;
+        
+        // Create edge
+        GraphEdge edge;
+        edge.id = next_graph_edge_id_++;
+        edge.vertex1_id = temp_vertex_id;
+        edge.vertex2_id = face_point_id;
+        edge.weight = edge_weight;
+        edge.face_id = containing_face->id;
+        edge.euclidean_length = euclidean_distance;
+        
+        graph_edges_.push_back(edge);
+        connections_made++;
+    }
+    
+    std::cout << "Connected temporary vertex " << temp_vertex_id 
+              << " to " << connections_made << " points on face " << containing_face->id << std::endl;
+}
+
+void Polyhedron::removeTemporaryVertices(const std::vector<int>& temp_vertex_ids) {
+    if (temp_vertex_ids.empty()) return;
+    
+    std::set<int> temp_ids(temp_vertex_ids.begin(), temp_vertex_ids.end());
+    
+    // Remove temporary vertices from graph_vertices_
+    graph_vertices_.erase(
+        std::remove_if(graph_vertices_.begin(), graph_vertices_.end(),
+            [&temp_ids](const GraphVertex& gv) {
+                return temp_ids.count(gv.id) > 0;
+            }),
+        graph_vertices_.end()
+    );
+    
+    // Remove edges connected to temporary vertices
+    graph_edges_.erase(
+        std::remove_if(graph_edges_.begin(), graph_edges_.end(),
+            [&temp_ids](const GraphEdge& ge) {
+                return temp_ids.count(ge.vertex1_id) > 0 || temp_ids.count(ge.vertex2_id) > 0;
+            }),
+        graph_edges_.end()
+    );
+    
+    std::cout << "Removed " << temp_vertex_ids.size() << " temporary vertices and their edges" << std::endl;
 }

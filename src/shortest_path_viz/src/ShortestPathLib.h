@@ -335,7 +335,7 @@ private:
      * @param point 3D coordinates of point
      * @return Pointer to face containing the point, or nullptr if not found
      */
-    const HE_Face* findFaceContainingPoint(const Vector3D& point);
+    const HE_Face* findContainingFace(const Vector3D& point);
     
     /**
      * @brief Check if point lies inside triangular face using barycentric coordinates
@@ -365,6 +365,37 @@ private:
      * @param temp_vertex_ids List of temporary vertex IDs to remove
      */
     void removeTemporaryVertices(const std::vector<int>& temp_vertex_ids);
+
+    /**
+     * @brief Get vertices of a triangular face
+     * @param face Triangular face
+     * @return Vector of 3D vertex positions
+     */
+    std::vector<Vector3D> getTriangleVertices(const HE_Face* face);
+    
+    /**
+     * @brief Compute barycentric coordinates of point relative to triangle
+     * @param p Point to compute coordinates for
+     * @param v0, v1, v2 Triangle vertices
+     * @return Barycentric coordinates (w0, w1, w2)
+     */
+    Vector3D computeBarycentric(const Vector3D& p, const Vector3D& v0, const Vector3D& v1, const Vector3D& v2);
+    
+    /**
+     * @brief Project point to closest point on triangle
+     * @param point Point to project
+     * @param v0, v1, v2 Triangle vertices
+     * @return Closest point on triangle
+     */
+    Vector3D projectPointToTriangle(const Vector3D& point, const Vector3D& v0, const Vector3D& v1, const Vector3D& v2);
+    
+    /**
+     * @brief Project point to closest point on line segment
+     * @param point Point to project
+     * @param a, b Line segment endpoints
+     * @return Closest point on line segment
+     */
+    Vector3D projectPointToLineSegment(const Vector3D& point, const Vector3D& a, const Vector3D& b);
 
 private:
     // === Core Data Structures ===

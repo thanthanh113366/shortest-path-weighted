@@ -40,9 +40,9 @@ public:
 private:
     void setup_polyhedron()
     {
-        // Load cube mesh
-        if (!poly_.loadFromOFF("models/extreme_asymmetric.off")) {
-            RCLCPP_ERROR(this->get_logger(), "Failed to load models/extreme_asymmetric.off");
+        // Load cube mesh 
+        if (!poly_.loadFromOFF("models/cube.off")) {
+            RCLCPP_ERROR(this->get_logger(), "Failed to load models/cube.off");
             return;
         }
         
@@ -59,17 +59,36 @@ private:
             return;
         }
         
+        // Get Steiner count before merging
+        original_steiner_count_ = poly_.getSteinerPoints().size();
+        
         // Merge Steiner points
         if (!poly_.mergeSteinerPoints()) {
             RCLCPP_ERROR(this->get_logger(), "Failed to merge Steiner points");
             return;
         }
         
-        // Build approximation graph (Task 3)
+        // Get final Steiner count
+        final_steiner_count_ = poly_.getSteinerPoints().size();
+        
+        // Build DENSE approximation graph first (Task 3)
         if (!poly_.buildApproximationGraph()) {
             RCLCPP_ERROR(this->get_logger(), "Failed to build approximation graph");
             return;
         }
+        
+        // Store dense graph statistics
+        dense_edge_count_ = poly_.getGraphEdges().size();
+        
+        // Build PRUNED approximation graph (Task 5 - optimization)
+        if (!poly_.buildPrunedApproximationGraph()) {
+            RCLCPP_ERROR(this->get_logger(), "Failed to build pruned approximation graph");
+            return;
+        }
+        
+        // Store sparse graph statistics
+        sparse_edge_count_ = poly_.getGraphEdges().size();
+        edge_reduction_ratio_ = 100.0 * (dense_edge_count_ - sparse_edge_count_) / dense_edge_count_;
         
         // Compute shortest path (Task 4 - Version 1: Vertex-to-Vertex)
         shortest_path_result_ = poly_.findApproximateShortestPath(0, 5, epsilon);
@@ -81,12 +100,21 @@ private:
         }
         
         // Compute shortest path (Task 4 - Version 2: Paper-Compliant Surface Points)
-        // Let's use vertices from opposite sides to force multi-face path
-        // V0 = (0, 1, 1.618) and V2 = (0, 0.618, -1.618) - opposite poles!
+        // Using barycentric coordinates on cube faces for guaranteed surface points
+        
+        // Point 1: On Face 0 (vertices 0,1,2) with barycentric (0.6, 0.3, 0.1)
+        // Face 0: V0=(1,1,-1), V1=(1,-1,-1), V2=(-1,-1,-1), weight=1.0
         Vector3D source_point;
-        source_point.x = 0.000000; source_point.y = 1.000000; source_point.z = 1.618000;  // Near V0
+        source_point.x = 0.6*1.0 + 0.3*1.0 + 0.1*(-1.0);    // = 0.8
+        source_point.y = 0.6*1.0 + 0.3*(-1.0) + 0.1*(-1.0); // = 0.2
+        source_point.z = 0.6*(-1.0) + 0.3*(-1.0) + 0.1*(-1.0); // = -1.0
+        
+        // Point 2: On Face 2 (vertices 4,7,6) with barycentric (0.2, 0.5, 0.3)
+        // Face 2: V4=(1,1,1), V7=(-1,1,1), V6=(-1,-1,1), weight=0.8
         Vector3D target_point;
-        target_point.x = 0.000000; target_point.y = 0.618000; target_point.z = -1.618000; // Near V2
+        target_point.x = 0.2*1.0 + 0.5*(-1.0) + 0.3*(-1.0);  // = -0.6
+        target_point.y = 0.2*1.0 + 0.5*1.0 + 0.3*(-1.0);     // = 0.4
+        target_point.z = 0.2*1.0 + 0.5*1.0 + 0.3*1.0;        // = 1.0
         shortest_path_result_v2_ = poly_.findApproximateShortestPath(source_point, target_point, epsilon);
         if (shortest_path_result_v2_.path_found) {
             RCLCPP_INFO(this->get_logger(), "Version 2 shortest path computed successfully! Cost: %.6f", 
@@ -95,7 +123,10 @@ private:
             RCLCPP_WARN(this->get_logger(), "Version 2 shortest path not found");
         }
         
-        RCLCPP_INFO(this->get_logger(), "Polyhedron setup complete with approximation graph and shortest path");
+        RCLCPP_INFO(this->get_logger(), "Polyhedron setup complete:");
+        RCLCPP_INFO(this->get_logger(), "  - Steiner points: %zu (reduced from %zu)", final_steiner_count_, original_steiner_count_);
+        RCLCPP_INFO(this->get_logger(), "  - Dense graph: %zu edges", dense_edge_count_);
+        RCLCPP_INFO(this->get_logger(), "  - Sparse graph: %zu edges (%.1f%% reduction)", sparse_edge_count_, edge_reduction_ratio_);
     }
     
     void publish_visualization()
@@ -364,12 +395,12 @@ private:
         stats_marker.color.r = 1.0; stats_marker.color.g = 1.0;
         stats_marker.color.b = 0.0; stats_marker.color.a = 1.0; // Yellow text
         
-        char stats_buffer[300];
+        char stats_buffer[400];
         snprintf(stats_buffer, sizeof(stats_buffer), 
-            "Approximation Graph (Task 3)\nVertices: %zu\nEdges: %zu (showing %d)\nWeight range: %.2f - %.2f",
-            graph_vertices.size(), graph_edges.size(), 
-            std::min((int)graph_edges.size(), max_edges_to_show),
-            min_weight, max_weight);
+            "Pruned Approximation Graph G* (Task 5)\nVertices: %zu\nSteiner: %zu (reduced from %zu)\nDense edges: %zu → Sparse edges: %zu\nReduction: %.1f%%\nWeight range: %.2f - %.2f\nShowing: %d edges",
+            graph_vertices.size(), final_steiner_count_, original_steiner_count_,
+            dense_edge_count_, sparse_edge_count_, edge_reduction_ratio_,
+            min_weight, max_weight, std::min((int)graph_edges.size(), max_edges_to_show));
         stats_marker.text = std::string(stats_buffer);
         
         marker_array.markers.push_back(stats_marker);
@@ -463,9 +494,9 @@ private:
         path_info_marker.color.r = 1.0; path_info_marker.color.g = 0.0;
         path_info_marker.color.b = 1.0; path_info_marker.color.a = 1.0; // Magenta text
         
-        char path_buffer[300];
+        char path_buffer[350];
         snprintf(path_buffer, sizeof(path_buffer), 
-            "Shortest Path (Task 4)\nFound: YES\nWeighted Cost: %.6f\nPath Length: %zu vertices\nFrom V0 to V5",
+            "Method 1: Vertex-to-Vertex (Task 4)\nFound: YES\nStart: V0 → End: V5\nWeighted Cost: %.6f\nPath Points: %zu\nEpsilon: 0.1 (≤10%% error)",
             shortest_path_result_.weighted_cost, shortest_path_result_.path.size());
         path_info_marker.text = std::string(path_buffer);
         
@@ -541,9 +572,9 @@ private:
         path_info_marker.color.r = 0.0; path_info_marker.color.g = 1.0;
         path_info_marker.color.b = 1.0; path_info_marker.color.a = 1.0; // Cyan text
         
-        char path_buffer[500];
+        char path_buffer[600];
         snprintf(path_buffer, sizeof(path_buffer), 
-            "Surface-Based Path (Face-by-Face)\nFound: YES\nWeighted Cost: %.6f\nPath Length: %zu vertices\nFace0→Face10: (0.539,0.000,1.412)→(-0.873,0.873,-0.873)",
+            "Method 2: Surface Points (Paper-Compliant)\nFound: YES\nStart: (0.800,0.200,-1.000) Face0 → End: (-0.600,0.400,1.000) Face2\nWeighted Cost: %.6f\nPath Points: %zu\nTemp vertices added/removed dynamically\nEpsilon: 0.1 (≤10%% error)",
             shortest_path_result_v2_.weighted_cost, shortest_path_result_v2_.path.size());
         path_info_marker.text = std::string(path_buffer);
         
@@ -772,6 +803,11 @@ private:
     rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr path_publisher_;
     rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr path_v2_publisher_;
     rclcpp::TimerBase::SharedPtr timer_;
+    size_t original_steiner_count_;
+    size_t final_steiner_count_;
+    size_t dense_edge_count_;
+    size_t sparse_edge_count_;
+    double edge_reduction_ratio_;
 };
 
 int main(int argc, char** argv)

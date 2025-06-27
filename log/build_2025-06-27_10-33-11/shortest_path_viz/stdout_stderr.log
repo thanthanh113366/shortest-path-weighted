@@ -1,0 +1,79 @@
+[35m[1mConsolidate compiler generated dependencies of target shortest_path_visualizer[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/shortest_path_visualizer.dir/src/shortest_path_visualizer.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/shortest_path_visualizer.dir/src/ShortestPathLib.cpp.o[0m
+In file included from [01m[K/usr/include/c++/11/cassert:44[m[K,
+                 from [01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:7[m[K:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:[m[K In member function ‘[01m[Kconst VertexGeometricParams& Polyhedron::getVertexGeometricParams(int) const[m[K’:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:470:38:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<VertexGeometricParams>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  470 |     assert(vertexID >= 0 && [01;35m[KvertexID < vertex_params_.size()[m[K && "Vertex ID out of bounds for geometric parameters.");
+      |                             [01;35m[K~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:[m[K In member function ‘[01m[Kvoid Polyhedron::displaySteinerPoints() const[m[K’:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:622:27:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<const SteinerPoint*>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  622 |         if ([01;35m[Kpoints.size() > show_count[m[K) {
+      |             [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:[m[K In member function ‘[01m[Kvoid Polyhedron::mergeSteinerPointsOnEdge(const std::pair<int, int>&)[m[K’:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:713:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kinitial_interval1[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  713 |     double [01;35m[Kinitial_interval1[m[K = params1.r_v * (params1.delta - 1.0);
+      |            [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:714:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kinitial_interval2[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  714 |     double [01;35m[Kinitial_interval2[m[K = params2.r_v * (params2.delta - 1.0);
+      |            [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:[m[K In member function ‘[01m[Kdouble Polyhedron::computeIntervalSizeAt(const SteinerPoint&, int, const VertexGeometricParams&)[m[K’:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:781:73:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksource_vertex_id[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  781 | double Polyhedron::computeIntervalSizeAt(const SteinerPoint& point, [01;35m[Kint source_vertex_id[m[K, const VertexGeometricParams& params) {
+      |                                                                     [01;35m[K~~~~^~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/cassert:44[m[K,
+                 from [01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:7[m[K:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:[m[K In member function ‘[01m[KShortestPathResult Polyhedron::findApproximateShortestPath(int, int, double)[m[K’:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:857:48:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::unique_ptr<HE_Vertex> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  857 |     assert(startVertexID >= 0 && [01;35m[KstartVertexID < vertices_.size()[m[K && "Start vertex ID is out of bounds.");
+      |                                  [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:858:44:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::unique_ptr<HE_Vertex> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  858 |     assert(endVertexID >= 0 && [01;35m[KendVertexID < vertices_.size()[m[K && "End vertex ID is out of bounds.");
+      |                                [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:[m[K In member function ‘[01m[Kbool Polyhedron::constructApproximationGraphEdges()[m[K’:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:1312:58:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::unique_ptr<HE_Face> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+ 1312 |         if (faces_processed % 10 == 0 || [01;35m[Kfaces_processed == faces_.size()[m[K) {
+      |                                          [01;35m[K~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:[m[K In member function ‘[01m[Kbool Polyhedron::buildPrunedApproximationGraph()[m[K’:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:1354:58:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::unique_ptr<HE_Face> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+ 1354 |         if (faces_processed % 10 == 0 || [01;35m[Kfaces_processed == faces_.size()[m[K) {
+      |                                          [01;35m[K~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:[m[K In member function ‘[01m[Kbool Polyhedron::createSparseSubgraph(const HE_Face*)[m[K’:
+[01m[K/home/hmt/shortest_path_weighted/src/shortest_path_viz/src/ShortestPathLib.cpp:1435:19:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+ 1435 |             if ([01;35m[Ki >= log_distance[m[K) {
+      |                 [01;35m[K~~^~~~~~~~~~~~~~~[m[K
+[100%] [32m[1mLinking CXX executable shortest_path_visualizer[0m
+[100%] Built target shortest_path_visualizer
+-- Install configuration: ""
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/lib/shortest_path_viz/shortest_path_visualizer
+-- Set runtime path of "/home/hmt/shortest_path_weighted/install/shortest_path_viz/lib/shortest_path_viz/shortest_path_visualizer" to ""
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//launch
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//launch/__pycache__
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//launch/__pycache__/visualize.launch.cpython-310.pyc
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//launch/visualize.launch.py
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//rviz
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz//rviz/shortest_path_viz.rviz
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models/
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//asymmetric_complex.off
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//pyramid.off
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//torus.off
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//extreme_asymmetric.off
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//irregular_mesh.off
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//cube.off
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/models//icosahedron.off
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/ament_index/resource_index/package_run_dependencies/shortest_path_viz
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/ament_index/resource_index/parent_prefix_path/shortest_path_viz
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/ament_prefix_path.sh
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/path.sh
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/environment/path.dsv
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.bash
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.sh
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.zsh
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/local_setup.dsv
+-- Installing: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/package.dsv
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/ament_index/resource_index/packages/shortest_path_viz
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/cmake/shortest_path_vizConfig.cmake
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/cmake/shortest_path_vizConfig-version.cmake
+-- Up-to-date: /home/hmt/shortest_path_weighted/install/shortest_path_viz/share/shortest_path_viz/package.xml

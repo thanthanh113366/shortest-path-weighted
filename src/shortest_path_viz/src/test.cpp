@@ -39,8 +39,8 @@ int main() {
     std::cout << "=== Shortest Path Algorithm Test ===" << std::endl;
 
     Polyhedron poly;
-    std::cout << "\nLoading cube.off..." << std::endl;
-    if (!poly.loadFromOFF("models/cube.off")) {
+    std::cout << "\nLoading extreme_asymmetric.off..." << std::endl;
+    if (!poly.loadFromOFF("models/extreme_asymmetric.off")) {
         std::cout << "ERROR: Failed to load mesh" << std::endl;
         return 1;
     }
@@ -80,23 +80,9 @@ int main() {
                   << result1.weighted_cost << ", " << result1.path.size() << " points" << std::endl;
     }
     
-    // Test arbitrary surface points on CUBE - using barycentric coordinates
-    // Face 0: vertices (0,1,2) = V0=(1,1,-1), V1=(1,-1,-1), V2=(-1,-1,-1), weight=1.0
-    // Face 2: vertices (4,7,6) = V4=(1,1,1), V7=(-1,1,1), V6=(-1,-1,1), weight=0.8
-    
-    // Point 1: On Face 0 with barycentric (0.6, 0.3, 0.1)
-    Vector3D start_pos = {
-        0.6*1.0 + 0.3*1.0 + 0.1*(-1.0),    // x = 0.6 + 0.3 - 0.1 = 0.8
-        0.6*1.0 + 0.3*(-1.0) + 0.1*(-1.0), // y = 0.6 - 0.3 - 0.1 = 0.2
-        0.6*(-1.0) + 0.3*(-1.0) + 0.1*(-1.0) // z = -0.6 - 0.3 - 0.1 = -1.0
-    };
-    
-    // Point 2: On Face 2 with barycentric (0.2, 0.5, 0.3)  
-    Vector3D end_pos = {
-        0.2*1.0 + 0.5*(-1.0) + 0.3*(-1.0),  // x = 0.2 - 0.5 - 0.3 = -0.6
-        0.2*1.0 + 0.5*1.0 + 0.3*(-1.0),     // y = 0.2 + 0.5 - 0.3 = 0.4
-        0.2*1.0 + 0.5*1.0 + 0.3*1.0         // z = 0.2 + 0.5 + 0.3 = 1.0
-    };
+    // Test arbitrary surface points  
+    Vector3D start_pos = {0.5, 0.5, 0.5};
+    Vector3D end_pos = {-0.3, 0.8, -0.2};
     auto result2 = poly.findApproximateShortestPath(start_pos, end_pos, epsilon);
     if (result2.path_found) {
         std::cout << "  Surface: cost=" << std::fixed << std::setprecision(3) 
